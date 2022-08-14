@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>給与編集画面</title> 
+<link rel="stylesheet" href="salary_s.css"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+            <div class="header">給与編集画像</div>
+            <div class="center">
+
+                <div class="left">
+                    <div class="name">
+                        <label for="name">名前</label><br>
+                        <input type="text" name="name" value="" size="20">
+                    </div>
+
+                    <div class="kyuyo">
+                        <label for="kyuyo">給与</label><br>
+                        <input type="number" name="kyuyo" value="" size="20">
+                    </div>
+
+                    <div class="zei">
+                        <label for="zei">税</label><br>
+                        <input type="number" name="zei" value="" size="20">
+                    </div>
+
+                    <div  class="hoken">
+                        <label for="hoken">保険料</label><br>
+                        <input type="number" name="hoken" value="" size="20">
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="right_inner">
+                        <div class="koutu">
+                            <label for="koutu">交通費</label><br>
+                            <input type="number" name="koutu" value="" size="20">
+                        </div>
+
+                        <div class="sougaku">
+                            <label for="sougaku">総支給額</label><br>
+                            <input type="number" name="sougaku" value="" size="20">
+                        </div>
+
+                        <div class="kouhubi">
+                            <label for="kouhubi">交付日</label><br>
+                            <input type="date" name="kouhubi" value="" size="20">
+                        </div>
+                    </div>
+                    <input type="submit" value="編集" class="next">
+                    <input type="submit" value="戻る" class="back">
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

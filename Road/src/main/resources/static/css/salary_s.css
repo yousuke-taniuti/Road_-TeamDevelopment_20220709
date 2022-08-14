@@ -1,0 +1,99 @@
+.wrapper{
+    margin: 0 auto;
+    width: 1000px
+}
+
+.ground{
+    background-color: #CCFFFF;
+    height: 600px;
+}
+
+.header{
+    font-size:50px;
+    float: auto;
+    margin-top: 40px;
+    padding-top: 30px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.center{
+    width: 700px;
+    height: 380px;
+    margin-left: 150px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.left{
+    width: 350px;
+    height: 450px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.right{
+    width: 350px;
+    height: 450px;
+    float: right;
+    float: left;
+}
+
+.right_inner{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.name{
+    height:30px;
+    margin-top: 50px;
+}
+
+.kyuyo{
+    height:30px;
+    margin-top: 30px;
+}
+
+.zei{
+    height:30px;
+    margin-top: 30px;
+}
+
+.hoken{
+    height:30px;
+    margin-top: 30px;
+}
+
+.koutu{
+    height:30px;
+    margin-top: 50px;
+}
+
+.sougaku{
+    height:30px;
+    margin-top: 30px;
+}
+
+.kouhubi{
+    height:30px;
+    margin-top: 30px;
+}
+
+.next{
+    font-size:15px;
+    background-color: #FFFF55;
+    margin-top: 60px;
+    margin-left: 110px;
+}
+
+.back{
+    font-size:15px;
+    background-color: #99FF00;
+    margin-top: 60px;
+    margin-left: 30px;
+}
