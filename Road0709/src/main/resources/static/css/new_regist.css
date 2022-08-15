@@ -1,0 +1,74 @@
+.wrapper{
+    margin: 0 auto;
+    width: 1000px
+}
+​
+.ground{
+    background-color: #CCFFFF;
+    height: 600px;
+}
+​
+.header{
+    font-size:50px;
+    float: auto;
+    margin-top: 40px;
+    height: 70px;
+    margin-left: 400px;
+    padding-top: 30px;
+    padding-bottom: 100px;
+}
+​
+.center{
+    width: 700px;
+    height: 450px;
+    margin-left: 150px;
+    vertical-align: middle;
+    background-color: white;
+}
+​
+.main{
+    padding-top: 30px;
+    margin-left: 120px;
+    font-size:20px;
+}
+​
+.name{
+    width:350px;
+    height:30px;
+}
+​
+.id{
+    width:350px;
+    height:30px;
+}
+​
+.pass{
+    width:350px;
+    height:30px;
+}
+​
+.email{
+    width:350px;
+    height:30px;
+}
+
+.prefecture_name{
+    width:350px;
+    height:30px;
+}
+
+.role_code{
+    width:350px;
+    height:30px;
+}
+​
+.department_code{
+    width:350px;
+    height:30px;
+}
+.footer{
+    font-size:20px;
+    margin-left: 90px;
+    padding: 5px 40px 5px 40px;
+    background-color: #99FF00;
+}
