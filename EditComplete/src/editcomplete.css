@@ -7,14 +7,27 @@
     float: auto;
     margin-top: 250px;
     height: 70px;
-    margin-left: 300px;
+    margin-left: 280px;
     padding-top: 20px;
 }
-.footer{
+.button1{
     font-size:20px;
-    margin-left: 380px;
     margin-top: 20px;
-    padding: 20px 40px 5px 40px;
-    background-color: #9BF9CC;
+    margin-left: 270px;
+    padding: 5px 10px 5px 10px;
+}
+
+.button2{
+    font-size:20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px 10px 5px 10px;
+}
+
+.button3{
+    font-size:20px;
+    margin-top: 20px;
+    margin-left: 20px;
+    padding: 5px 10px 5px 10px;
 }
 
