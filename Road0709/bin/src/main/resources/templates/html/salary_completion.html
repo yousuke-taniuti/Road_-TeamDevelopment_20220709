@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://www.thymeleaf.org"
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+  <title>給与画面</title>
+  <link rel="stylesheet" th:href="@{/css/salary_completion.css}"></link>
+  </head>
+<body>
+  <div class="wrapper"> 
+    <div class="ground">
+      <div class="header">給与画面</div>
+      <div th:object="${salaryDate}">
+      <div class="center clearfix">
+        <table th:if="${salaryList.size() >= 1}">
+          <thead>
+           	<tr>
+	            <th>給料ID</th>
+	            <th>ID</th>
+	            <th>名前</th>
+	            <th>給与</th>
+	            <th>税</th>
+	            <th>保険料</th>
+	            <th>交通費</th>
+	            <th>総支給額</th>
+	            <th>交付日</th>
+	            <th>オプション</th>
+          	</tr>
+          </thead>	
+          <tr th:each="salary : ${salaryList}" >
+            <td  th:text="*{salary_number}"></td>
+            <td  th:text="*{user_id}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{base_salary}"></td>
+            <td th:text="*{tax}"></td>
+            <td th:text="*{premium}"></td>
+            <td th:text="*{carfare}"></td>
+            <td th:text="*{gross_payment}"></td>
+            <td th:text="${#dates format}"></td>
+            <th><button type="submit" class="button1" role="presentation" sec:authorize="hasRole('DM','DD','MD','SMD','CEO')">編集</button>
+             	<form action="#" method="get"
+                  th:action="@{/download(id=${'__${Salary_Number}__'})}"
+                  th:method="download" >
+                <input type="hidden" name="_method" value="download" />
+                <input type="submit" value="csv" />
+            	</form>
+            </th>
+          </tr>
+          </table>   
+          <div class="button clearfix">
+          <form action="regist" method="get">
+            
+            
+          </form>
+          </div> 
+          <form action="regist" method="get">
+            <button type="submit" class="footer">検索&一覧に戻る</button>
+          </form>
+        </div>   
+  </div>
+</body>
+</html>
