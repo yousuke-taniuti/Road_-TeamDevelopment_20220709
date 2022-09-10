@@ -61,12 +61,12 @@ public class EditController {
 		editRequest.setName_kana(edit.getName_kana());
 		editRequest.setPassword(edit.getPassword());
 		editRequest.setUpn(edit.getUpn());
-		editRequest.setBirthday(edit.getBirthday());
-		editRequest.setRole_code(edit.getRole_code());
+//		editRequest.setBirthday(edit.getBirthday());
+//		editRequest.setRole_code(edit.getRole_code());
 		editRequest.setPrefecture_code(edit.getPrefecture_code());
 		editRequest.setDepartment_code(edit.getDepartment_code());
-		editRequest.setEntry_date(edit.getEntry_date());
-		editRequest.setProfile_image(edit.getProfile_image());
+//		editRequest.setEntry_date(edit.getEntry_date());
+//		editRequest.setProfile_image(edit.getProfile_image());
 //		List<Edit> editList = editService.findAll();
 		model.addAttribute("editRequest", editRequest);
 		return "html/edit";
@@ -77,7 +77,7 @@ public class EditController {
 		
 		editService.update(editRequest);
 		
-		model.addAttribute("UpdateRequest",editRequest );
+		model.addAttribute("UpdateRequest",editRequest);
 		
 		return "editcomplete";
 //	  @RequestMapping("/")

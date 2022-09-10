@@ -50,12 +50,12 @@ public class EditService {
 		edit.setName_kana(editRequest.getName_kana());
 		edit.setPassword(editRequest.getPassword());
 		edit.setUpn(editRequest.getUpn());
-		edit.setBirthday(editRequest.getBirthday());
-		edit.setRole_code(editRequest.getRole_code());
+//		edit.setBirthday(editRequest.getBirthday());
+//		edit.setRole_code(editRequest.getRole_code());
 		edit.setPrefecture_code(editRequest.getPrefecture_code());
 		edit.setDepartment_code(editRequest.getDepartment_code());
-		edit.setEntry_date(editRequest.getEntry_date());
-		edit.setProfile_image(editRequest.getProfile_image());
+//		edit.setEntry_date(editRequest.getEntry_date());
+//		edit.setProfile_image(editRequest.getProfile_image());
 
 		editRepository.save(edit);
 	}

@@ -1,25 +1,26 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>編集完了</title>
-    <link rel="stylesheet" href="complete.css">
-</head>
-<body>
-    <div class="wrapper">
-        <div class="header">編集が完了しました</div>
-
-        <input type="submit" value="編集画面に戻る" class="footer">
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>給与編集画面</title> 
+<link th:href="@{/css/editcomplete.css}" rel="stylesheet"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">社員編集完了画面</div>
+            <div class="center">
+            <form th:action="@{/editcomplete}" th:object="${UpdateRequest}" th:method="post">
+                <div class="main">
+                    
+                    <p class="word">編集が完了しました。</p>
+                    
+                    <input th:href="@{/serch&list}" type="submit" value="一覧画面に戻る" class="footer">
+                
+                </div>
+            </form>
+            </div>
+        </div>
     </div>
-    
-    
-  
-
-
-
-
-
 </body>
 </html>

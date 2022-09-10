@@ -1,7 +1,6 @@
 package com.employee.edit.request;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -53,8 +52,8 @@ public class EditRequest implements Serializable {
 	/**
 	 * 誕生日
 	 */
-	@NotEmpty(message = "生年月日を入力してください")
-	private Date birthday;
+//	@NotEmpty(message = "生年月日を入力してください")
+//	private Date birthday;
 	/**
 	 * 性別
 	 */
@@ -63,8 +62,8 @@ public class EditRequest implements Serializable {
 	/**
 	 *　役職
 	 */
-	@NotEmpty(message = "役職を選択してください")
-	private String role_code;
+//	@NotEmpty(message = "役職を選択してください")
+//	private String role_code;
 	/**
 	 * 出身地
 	 */
@@ -78,11 +77,11 @@ public class EditRequest implements Serializable {
 	/**
 	 * 入社日
 	 */
-	@NotEmpty(message = "入社日を入力してください")
-	private Date entry_date;
+//	@NotEmpty(message = "入社日を入力してください")
+//	private Date entry_date;
 	/**
 	 * プロフィール画像
 	 */
-	@Nullable
-	private String profile_image;
+//	@Nullable
+//	private String profile_image;
 }
