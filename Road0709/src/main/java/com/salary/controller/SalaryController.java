@@ -21,7 +21,7 @@ public class SalaryController {
 	@Autowired
 	private SalaryService salaryService;
 
-//	給与画面（ログイン画面できたら）ログイン中のユーザーIDを取得
+//	給与画面（ログイン画面できたら）ログイン中のユーザーIDを取得dd
 //	@GetMapping("/")
 //	public String displayList(@AuthenticationPrincipal User user, Model model) {
 //		user.getUser_id();

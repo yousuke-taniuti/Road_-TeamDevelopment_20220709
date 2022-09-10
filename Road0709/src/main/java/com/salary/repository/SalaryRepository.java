@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.salary.entity.Salary;
 /**
- * ユーザー情報 Repository
+ * ユーザー情報 Repositorydd
  */
 @Repository
 public interface SalaryRepository extends JpaRepository<Salary, String> {}

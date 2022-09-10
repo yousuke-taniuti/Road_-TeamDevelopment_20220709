@@ -14,7 +14,7 @@ import com.salary.repository.SalaryRepository;
 @Service
 public class SalaryService {
 	/**
-	 * ユーザー情報 Repository
+	 * ユーザー情報 Repositoryss
 	 */
 	@Autowired
 	private SalaryRepository salaryRepository;
