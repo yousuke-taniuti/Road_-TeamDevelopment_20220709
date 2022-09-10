@@ -7,5 +7,7 @@ import com.delete.entity.Delete;
 
 
 @Repository
-public interface DeleteRepository extends JpaRepository<Delete, Long> {}
+public interface DeleteRepository extends JpaRepository<Delete, String> {
+
+}
 	

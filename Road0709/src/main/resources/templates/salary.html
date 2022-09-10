@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css">
+  <title>給与画面</title>
+  <link rel="stylesheet" th:href="@{/salary.css}"></head>
+<body>
+  <div class="wrapper"> 
+    <div class="ground">
+      <h3 class="header">給与画面</h3>
+        <div class="center">
+          <table class="table table-striped">
+          <tr>
+            <th>給与番号</th>
+            <th>ID</th>
+            <th>名前</th>
+            <th>給与</th>
+            <th>税</th>
+            <th>保険料</th>
+            <th>交通費</th>
+            <th>総支給額</th>
+            <th>交付日</th>
+          </tr>
+          <tr th:each="salary : ${salarylist}" th:object="${salary}">
+            <td th:text="*{salary_number}"></td>
+            <td th:text="*{user_id}"></td>
+            <td th:text="*{name}"></td>
+            <td th:text="*{base_salary}"></td>
+            <td th:text="*{tax}"></td>
+            <td th:text="*{premium}"></td>
+            <td th:text="*{carfare}"></td>
+            <td th:text="*{gross_payment}"></td>
+            <td th:text="*{salary_date}"></td>
+            <td><a th:href="@{/html/{salary_number}(salary_number=*{salary_number})/{user_id}(user_id=*{user_id})/salary_s}" class="footer1" onclick="">編集</a></td>
+            <td><a th:href="@{/html/{salary_number}(salary_number=*{salary_number})/{user_id}(user_id=*{user_id})/salary_delete}" class="footer2" onclick="">削除</a></td>
+          </tr>
+          </table>    
+            <button th:href="@{/html/serch&list}" class="footer" onclick="">検索＆一覧に戻る</button>
+            
+            <form action="#" th:action="@{/salary_s}" th:object="${editCompletedRequest}" method="get">
+      		<input type="hidden" name="salaryNumber" th:value="1" />
+      		<p><input type="submit" value="編集"> </p>
+   		 	</form>
+            
+        </div>   
+    </div>
+  </div>
+</body>
+</html>

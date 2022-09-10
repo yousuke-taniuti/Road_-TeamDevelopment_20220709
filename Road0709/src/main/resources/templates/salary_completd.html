@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>給与編集画面</title> 
+<link th:href="@{/salary_completed.css}" rel="stylesheet"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">給与編集完了画面</div>
+            <div class="center">
+            <form th:action="@{/salary_completed}" th:object="${UpdateRequest}" th:method="post">
+                <div class="main">
+                    
+                    <p class="word">編集が完了しました。</p>
+                    
+                    <input th:href="@{/salary}" type="submit" value="給与画面に戻る" class="footer">
+                
+                </div>
+            </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

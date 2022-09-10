@@ -13,12 +13,12 @@ public class DeleteService {
 	@Autowired
 	private DeleteRepository deleteRepository;
 
-	public Delete findById(Long userId) {
-		return deleteRepository.findById(userId).get();
+	public Delete findById(String user_id) {
+		return deleteRepository.findById(user_id).get();
 	}
 
-	 public void delete(Long userId) {
-		    Delete delete = findById(userId);
+	 public void delete(String user_id) {
+		    Delete delete = findById(user_id);
 		    deleteRepository.delete(delete);
 	 }
 	

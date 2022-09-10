@@ -16,19 +16,20 @@ public class DeleteController {
 	@Autowired
 	private DeleteService deleteService;
 	
-	@GetMapping(value = "/html/{user_id}")
-	public String displaySerch(@PathVariable Long userId,Model model) {
-		Delete delete = deleteService.findById(userId);
-		model.addAttribute("userDate",delete);
-		return "/html/edit";
+	
+	@GetMapping(value = "/serch&list")
+	public String displaylist(Model model){
+		return "serch&list";
 	}
 	
 	
-	 @GetMapping("/user/{id}/delete")
-	  public String delete(@PathVariable Long userId, Model model) {
-	    deleteService.delete(userId);
-	    return "redirect:/user/serch&list";
-	 }
+	@GetMapping(value = "/{user_id}")
+	public String displaySerch(@PathVariable String user_id,Model model) {
+		Delete delete = deleteService.findById(user_id);
+		deleteService.delete(user_id);
+		model.addAttribute("userDate",delete);
+		return "delete";
+	}
 	
 	
 }

@@ -54,32 +54,32 @@
     margin-top: 50px;
 }
 
-.kyuyo{
+.base_salary{
     height:30px;
     margin-top: 30px;
 }
 
-.zei{
+.tax{
     height:30px;
     margin-top: 30px;
 }
 
-.hoken{
+.premium{
     height:30px;
     margin-top: 30px;
 }
 
-.koutu{
+.carfare{
     height:30px;
     margin-top: 50px;
 }
 
-.sougaku{
+.gross_payment{
     height:30px;
     margin-top: 30px;
 }
 
-.kouhubi{
+.salary_date{
     height:30px;
     margin-top: 30px;
 }
