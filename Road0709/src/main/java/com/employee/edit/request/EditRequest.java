@@ -19,7 +19,6 @@ import lombok.EqualsAndHashCode;
 @Data
 public class EditRequest implements Serializable {
 	
-	
 	   /**
 	   * ID
 	   */
@@ -79,7 +78,7 @@ public class EditRequest implements Serializable {
 	/**
 	 * 入社日
 	 */
-	@NotEmpty(message = "入社日を入力しdてください")
+	@NotEmpty(message = "入社日を入力してください")
 	private Date entry_date;
 	/**
 	 * プロフィール画像
