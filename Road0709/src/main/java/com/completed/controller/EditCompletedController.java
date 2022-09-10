@@ -1,22 +1,17 @@
 package com.completed.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.completed.entity.EditCompleted;
-import com.completed.request.UpdateRequest;
+import com.completed.request.EditCompletedRequest;
 import com.completed.service.EditCompletedService;
 
 
@@ -26,44 +21,55 @@ public class EditCompletedController {
 	@Autowired
 	private EditCompletedService editCompletedService;
 	
-	
-	@GetMapping(value = "/html/{user_id}/salary")
-	public String displaySalary(@PathVariable Long userId,Model model) {
-		return "/html/salary";
+	@GetMapping(value = "/index")
+	public String index(Model model) {
+		EditCompletedRequest editCompletedRequest = new EditCompletedRequest();
+		model.addAttribute("editCompletedRequest", editCompletedRequest);
+		return "salary";
 	}
 	
 	
-	@GetMapping(value = "/html/{salary_number}/{user_id}/salary_s")
-	public String displaySalarys(@PathVariable Long userId,@PathVariable Long salaryNumber,Model model) {
-		EditCompleted editCompleted = editCompletedService.findById(salaryNumber);
-		UpdateRequest updateRequest = new UpdateRequest();
-	    updateRequest.setUserId(editCompleted.getUserId());
-	    updateRequest.setName(editCompleted.getName());
-	    updateRequest.setBaseSalary(editCompleted.getBaseSalary());
-	    updateRequest.setTax(editCompleted.getTax());
-	    updateRequest.setPremium(editCompleted.getPremium());
-	    updateRequest.setCarfare(editCompleted.getCarfare());
-	    updateRequest.setGrossPayment(editCompleted.getGrossPayment());
-	    updateRequest.setSalaryDate(editCompleted.getSalaryDate());
-	    model.addAttribute("updateRequest", updateRequest);
-        return "/html/salary_s";
+	//編集画面
+	@GetMapping(value = "/salary_s")
+		public String displaySalarys(EditCompletedRequest editCompletedRequests,Model model) {
+			EditCompleted editCompleted = editCompletedService.findById(editCompletedRequests.getSalaryNumber());
+			EditCompletedRequest editCompletedRequest = new EditCompletedRequest();
+			editCompletedRequest.setUserId(editCompleted.getUserId());
+			editCompletedRequest.setSalaryNumber(editCompleted.getSalaryNumber());
+			editCompletedRequest.setName(editCompleted.getName());
+			editCompletedRequest.setBaseSalary(editCompleted.getBaseSalary());
+			editCompletedRequest.setTax(editCompleted.getTax());
+			editCompletedRequest.setPremium(editCompleted.getPremium());
+			editCompletedRequest.setCarfare(editCompleted.getCarfare());
+			editCompletedRequest.setGrossPayment(editCompleted.getGrossPayment());
+//			editCompletedRequest.setSalaryDate(editCompleted.getSalaryDate());
+		    model.addAttribute("editCompletedRequest", editCompletedRequest);
+	        return "salary_s";
 		
 	}
 	
-	 @RequestMapping(value = "/html/update", method = RequestMethod.POST)
-	  public String update(@Validated @ModelAttribute UpdateRequest updateRequest, BindingResult result, Model model) {
-	    if (result.hasErrors()) {
-	    	
-	      List<String> errorList = new ArrayList<String>();
-	      for (ObjectError error : result.getAllErrors()) {
-	        errorList.add(error.getDefaultMessage());
-	      }
-	      model.addAttribute("validationError", errorList);
-	      return "/html/salary_s";
-	    }
-	    // ユーザー情報の登録
-	    editCompletedService.update(updateRequest);
-	    return "/html/edit";
+//	@RequestMapping(value = "/salary_completed", method = RequestMethod.POST)
+//    public String update(Model model) {
+//        return "salary_completed";
+//    }
+	//編集完了画面遷移
+	 @RequestMapping(value = "/salary_s/update", method = RequestMethod.POST)
+	  public String update(@Validated @ModelAttribute EditCompletedRequest editCompletedRequest, BindingResult result, Model model) {
+//	    if (result.hasErrors()) {
+//	    	
+//	      List<String> errorList = new ArrayList<String>();
+//	      for (ObjectError error : result.getAllErrors()) {
+//	        errorList.add(error.getDefaultMessage());
+//	      }
+//	      model.addAttribute("validationError", errorList);
+//	      return "salary_s"; 
+//		 }
+		 //ユーザー情報の登録
+	    editCompletedService.update(editCompletedRequest);
+	    
+	    model.addAttribute("UpdateRequest", editCompletedRequest);
+	    
+	    return "salary_completd";
 	  }
 	
 	

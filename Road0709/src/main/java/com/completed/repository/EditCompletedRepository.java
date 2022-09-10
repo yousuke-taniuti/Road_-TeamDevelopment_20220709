@@ -5,8 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.completed.entity.EditCompleted;
 
-
 @Repository
-public interface EditCompletedRepository extends JpaRepository<EditCompleted, Long>{
+public interface EditCompletedRepository extends JpaRepository<EditCompleted, String>{
 
 }

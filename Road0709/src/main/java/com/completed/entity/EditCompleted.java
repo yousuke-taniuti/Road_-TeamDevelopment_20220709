@@ -1,9 +1,7 @@
 package com.completed.entity;
 
-import java.io.Serializable;
-import java.util.Date;
-
 import javax.persistence.Column;
+import javax.persistence.Embeddable;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -14,23 +12,24 @@ import lombok.Data;
 
 
 @Entity
-@Data
+@Embeddable
 @Table(name = "salary")
-public class EditCompleted implements Serializable{
+@Data
+public class EditCompleted{
 
 	
-	@Id
 	@Column(name = "user_id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long userId;
+	private String userId;
 	
 	
 	@Id
 	@Column(name = "salary_number")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long salaryNumber;
+	private String salaryNumber;
 	
 	
+
 	@Column(name = "name")
 	private String name;
 	
@@ -55,8 +54,9 @@ public class EditCompleted implements Serializable{
 	private int grossPayment;
 	
 	
-	@Column(name = "salary_date")
-	private Date salaryDate;
+//	@Column(name = "salary_date")
+//	private Date salaryDate;
+	
 	
 	
 }
