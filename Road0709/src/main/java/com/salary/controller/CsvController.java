@@ -59,6 +59,8 @@ public class CsvController {
 
 	}
 	
+	//管理者用
+	
 	@GetMapping("/salary_csv1")
 	public void exportTocsv(HttpServletResponse response) throws IOException {
 
