@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="utf-8"> 
+
+  <!-- Bootstrapの設定 -->
+    <link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}" rel="stylesheet"></link>
+    <script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+    
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>社員登録</title> 
+<link rel="stylesheet" href="/css/new_regist.css"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">社員登録</div>
+        <div th:if="${validationError}" th:each="error : ${validationError}">
+        <label class="text-danger" th:text="${error}"></label>
+        
+     </div>
+        <form th:action="@{/employee_registration}" th:object="${employeeSignupForm}" th:method="post">
+            <div class="center">
+                <div class="left">
+                    <div class="id">
+                        <label for="user_id">ID<span class="text-danger"></span></label><br>
+                        <input type="text" name="user_id"  th:field="*{user_id}"  size="20">
+                     
+                    </div>
+                    
+                    <div class="name">
+                        <label for="name">名前</label><br>
+                        <input type="text" name="name" th:field="*{name}" size="20">
+
+                    </div>
+
+                    <div class="kana">
+                        <label for="kana">名前(カナ)</label><br>
+                        <input type="text" name="kana" th:field="*{name_kana}" size="20">
+                    </div>
+
+                    <div  class="password">
+                        <label for="password">パスワード</label><br>
+                        <input type="password" name="password" th:field="*{password}" size="20">
+                    </div>
+                    <div  class="upn">
+                        <label for="upn">メールアドレス</label><br>
+                        <input type="text" name="upn" th:field="*{upn}" size="20">
+                    </div>
+                </div>
+
+                <div class="right">
+                    <div class="right_inner">
+                       <div class="date">
+                            <label for="birthday">生年月日</label><br>
+                            <input type="date" name="birthday" th:field="*{birthday}" size="20">
+                            
+                        </div>
+
+                        <div class="gender">
+                            <label for="gender">性別</label><br>
+                            <input type="radio" name="gender" value="1" th:field="*{gender}" > 男性
+                            <input type="radio" name="gender" value="2" th:field="*{gender}"> 女性 
+                                                
+                        </div>
+
+                        <div class="from">
+                            <label for="prefecture_code">出身都道府県</label><br>
+                            <select name="prefecture_code" th:value="*{prefecture_code}">
+                                <option value="">=選択肢=</option>
+                                <option th:each="item : ${prefecture}" th:value="${item.prefecture_code}" th:text="${item.prefecture_name}" ></option>
+                                
+                            </select>
+                        </div>
+                        <div  class="role">
+                            <label for="role_code">役職</label><br>
+                            <select name="role_code" th:value="*{role_code}">
+                                <option value="">=選択肢=</option>                        
+                                <option th:each="item : ${role}" th:value="${item.role_code}" th:text="${item.role_name}" ></option>
+                            </select>
+                        </div>
+                        <div  class="department">
+                            <label for="department_code">部署</label><br>
+                            <select name="department_code" th:value="*{department_code}">
+                                <option value="">=選択肢=</option>                        
+                                <option th:each="item : ${department}" th:value="${item.department_code}" th:text="${item.department_name}" ></option>
+                            </select>
+                        </div>
+                    </div> 
+                        <input type="submit" value="登録" class="next"></input>
+                        <a th:href="@{/search＆list}"><input type="button" class="back"  value="戻る" ></input></a>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>
