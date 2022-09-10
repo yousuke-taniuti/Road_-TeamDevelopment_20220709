@@ -1,40 +1,191 @@
 <!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-</html><!DOCTYPE html>
-<html lang="jp">
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="delete.css">
-<title>社員削除完了</title>
+<link rel="stylesheet" href="edit.css">
+<title>社員編集・削除</title>
 </head>
 <body>
-	<div id="wrapper">
-		<div class="ground">
-			<div class="deletion_completed">
-				<p>社員削除完了</p>
-			</div>
+	<div class="wrapper">
+		<!--<div th:if="${validationError}" th:each="error : ${validationError}">-->
+			<!--b  <label class="text-danger" th:text="${error}"></label>-->
+			<div class="ground">
+
+				<div class="edit">
+					<p>社員編集・削除</p>
+				</div>
+				<form>
+     				<input type="file" name="file"/>
+      				<button type="submit" formenctype="multipart/form-data" formmethod="post" formaction="/upload">MultipartFile送信</button>
+ 				</form>
+		
+		<form th:action="@{/}" th:object="${editRequest}" th:method="post">
+				
 			<div class="center">
-				<main class="main">
-					<div class="completed">
-						<label>削除完了しました</label>
-						<div class="backTop">
-							<button type="submit" class="footer" onclick="">トップに戻る</button>
-						</div>
+				<div class="main clearfix">
+						<table class="main-left">
+							<tr >
+								<th	>ユーザーID</th>
+								<td><input class="user_id" type="text" name="user_id" value="" size="35" th:field="*{user_id}"></td>
+								<td th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}">ID Error</td>
+							</tr>
+
+							<tr >
+								<th	>名前</th>
+								<td><input class="name" type="text" name="name" value="" size="35" th:field="*{name}"></td>
+								<td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name Error</td>
+							</tr>
+							
+							<tr >
+								<th	>カナ</th>
+								<td><input class="name_katakana" type="text" name="name_katakana" value="" size="35" th:field="*{name_katakana}"></td>
+								<td th:if="${#fields.hasErrors('name_katakana')}" th:errors="*{name_katakana}">Name_katakana Error</td>
+							</tr>
+
+							<tr >
+								<th	>パスワード</th>
+								<td><input class="password" type="text" name="password" value="" size="35" th:field="*{password}"></td>
+								<td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">password Error</td>
+							</tr>
+
+							<tr >
+								<th	>メールアドレス</th>
+								<td><input class="email" type="text" name="email" value="" size="35" th:field="*{email}"></td>
+								<td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">email Error</td>
+							</tr>
+
+						</table>
+
+						<table class="main-right clearfix">
+							<tr >
+								<th	>生年月日</th>
+								<td><input class="birthday" type="date" name="birthday" value="" th:field="*{birthday}"></td>
+								<td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">birthday Error</td>
+							</tr>
+
+							<tr >
+								<th	>性別</th>
+								<td>
+									<input type="radio" name="gender" value="1"th:field="*{gender}"> 男
+									<input type="radio" name="gender" value="2"th:field="*{gender}"> 女
+								</td>
+								<td th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}">birthday Error</td>
+							</tr>
+
+							<tr >
+								<th	>出身地</th>
+								<td>
+									<select  th:field="*{prefecture}" name="prefecture">
+									<option value="1">北海道</option>
+									<option value="2">青森県</option>
+									<option value="3">岩手県</option>
+									<option value="4">宮城県</option>
+									<option value="5">秋田県</option>
+									<option value="6">山形県</option>
+									<option value="7">福島県</option>
+									<option value="8">茨城県</option>
+									<option value="9">栃木県</option>
+									<option value="10">群馬県</option>
+									<option value="11">埼玉県</option>
+									<option value="12">千葉県</option>
+									<option value="13">東京都</option>
+									<option value="14">神奈川県</option>
+									<option value="15">新潟県</option>
+									<option value="16">富山県</option>
+									<option value="17">石川県</option>
+									<option value="18">福井県</option>
+									<option value="19">山梨県</option>
+									<option value="20">長野県</option>
+									<option value="21">岐阜県</option>
+									<option value="22">静岡県</option>
+									<option value="23">愛知県</option>
+									<option value="24">三重県</option>
+									<option value="25">滋賀県</option>
+									<option value="26">京都府</option>
+									<option value="27">大阪府</option>
+									<option value="28">兵庫県</option>
+									<option value="29">奈良県</option>
+									<option value="30">和歌山県</option>
+									<option value="31">鳥取県</option>
+									<option value="32">島根県</option>
+									<option value="33">岡山県</option>
+									<option value="34">山口県</option>
+									<option value="35">広島県</option>
+									<option value="36">徳島県</option>
+									<option value="37">香川県</option>
+									<option value="38">愛媛県</option>
+									<option value="39">高知県</option>
+									<option value="40">福岡県</option>
+									<option value="41">佐賀県</option>
+									<option value="42">長崎県</option>
+									<option value="43">熊本県</option>
+									<option value="44">大分県</option>
+									<option value="45">宮崎県</option>
+									<option value="46">鹿児島県</option>
+									<option value="47">沖縄県</option>
+								</select>
+							</td>
+							</tr>
+
+							<tr >
+								<th	>役職</th>
+								<td>
+								<select name="role_code"  th:field="*{role_code}">
+									<option value="C">主任</option>
+									<option value="CEO">代表取締役社長</option>
+									<option value="D">係長</option>
+									<option value="DD">本部長</option>
+									<option value="DM">秋田県</option>
+									<option value="M">山形県</option>
+									<option value="MD">福島県</option>
+									<option value="S">茨城県</option>
+									<option value="SM">福島県</option>
+									<option value="SMD">茨城県</option>
+								</select>
+							</td>
+							<td th:if="${#fields.hasErrors('role_code')}" th:errors="*{role_code}">role_code Error</td>
+							</tr>
+
+							<tr >
+								<th	>部署</th>
+								<td>
+								<select name="department_code" th:field="*{department_code}">
+									<option value="0">本社</option>
+									<option value="1">東京支店</option>
+									<option value="2">神奈川支店</option>
+									<option value="3">大阪支店</option>
+									<option value="4">仙台支店</option>
+									<option value="5">新潟支店</option>
+								</select>	
+							</td>
+							</tr>
+
+							<tr >
+								<th	>入社日</th>
+								<td>
+									<input class="hire_date" type="date" name="hire_date" value="" 
+									th:field="*{hire_date}">
+								</td>
+								<td th:if="${#fields.hasErrors('hire_date')}" th:errors="*{hire_date}">hire_date Error</td>
+							</tr>
+
+						</table>
 					</div>
-				</main>
+
+					<div class="botton clearfix">
+
+						<button class="left-footer" type="submit" onclick="">変更</button>
+						<button class="right-footer" type="submit" onclick="">削除</button>
+					</div>
+
+					</div>
+					<!--  <input type="hidden" name="user_id" th:value="${param.user_id[0]}">-->
+		</form>
 			</div>
-
 		</div>
-	</div>
-
 </body>
 </html>
