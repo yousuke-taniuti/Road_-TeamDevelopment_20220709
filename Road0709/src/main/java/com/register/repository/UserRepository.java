@@ -1,10 +1,18 @@
 package com.register.repository;
 
-public class UserRepository {
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
 
-	}
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
+import com.register.entity.User;
+/**
+ * ユーザー情報 Repository
+ */
+@Repository
+public interface UserRepository extends JpaRepository<User, String> {
+	
 }
+
+
+

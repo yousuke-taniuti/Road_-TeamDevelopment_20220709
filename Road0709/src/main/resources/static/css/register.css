@@ -90,11 +90,12 @@
 }
 
 .busyo{
-    height:30px;
+  
     margin-top: 30px;
 }
 
 .next{
+
     font-size:15px;
     background-color: #FFFF55;
     margin-top: 60px;
@@ -102,6 +103,7 @@
 }
 
 .back{
+
     font-size:15px;
     background-color: #99FF00;
     margin-top: 60px;
