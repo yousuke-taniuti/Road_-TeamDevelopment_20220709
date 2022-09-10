@@ -21,7 +21,7 @@ public class EditService {
 	private EditRepository editRepository;
 
 //  /**
-//   * ユーザー情報 全s検索
+//   * ユーザー情報 全検索
 //   * @return 検索結果
 //   */
 //  public List<Edit> findAll() {
