@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>新規登録完了</title> 
+<link rel="stylesheet" href="register_completion.css"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">新規登録完了</div>
+            <div class="center">
+                <div class="main">
+                <ul>
+                    <ul class="list-group list-group-flush" th:object="${userForm}">
+                        <li class="list-group-item">
+                            名前：<span th:text="*{name}"></span>
+                        </li><br>
+
+                        <li class="list-group-item">
+                            ユーザーID：<span th:text="*{id}"></span>
+                        </li><br>
+
+                        <li class="list-group-item">
+                            パスワード：<span th:text="*{password}"></span>
+                        </li><br>
+                        
+                    </ul>
+                    <div class="under">登録完了しました。</div>
+                    
+                    <br>
+                    <input type="submit" value="トップに戻る" class="footer">
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
