@@ -15,39 +15,39 @@
                     <div class="content clearfix">
                         <div class="content-left">
                             <label>ユーザーID</label><br>
-                            <input class="id" size="8" th:text="${user_id}"><br>
+                            <input class="id" size="8" tth:text="${user_id}"><br>
 
                             <label>名前</label><br>
-                            <input class="name" size="20" h:text="${name}"><br>
+                            <input class="name" size="20" th:text="${name}"><br>
 
                             <label>カタカナ</label><br>
-                            <input class="kana" size="50" h:text="${name_kana}"><br>
+                            <input class="kana" size="50" th:text="${name_kana}"><br>
 
                             <label>パスワード</label><br>
-                            <input class="pass" size="100" h:text="${password}"><br>
+                            <input class="pass" size="100" th:text="${password}"><br>
 
                             <label>メールアドレス</label><br>
-                            <input class="upn" size="50" h:text="${upn}"><br>
+                            <input class="upn" size="50" th:text="${upn}"><br>
                         </div>
 
                         <div class="content-right">
                             <label>生年月日</label><br>
-                            <input class="birthday" h:text="${birthday}"><br>
+                            <input class="birthday" th:text="${#dates.format(birthday,'yyyy-MM-dd')}"><br>
 
                             <label>性別</label><br>
-                            <input class="gender" h:text="${gender}"><br>
+                            <input class="gender" th:text="${gender}"><br>
 
                             <label>出身地</label><br>
-                            <input class="prefecture_code" h:text="${prefecture_code}"><br>
+                            <input class="prefecture_code" th:text="${prefecture_code}"><br>
                                 
                             <label>役職</label><br>
-                            <input class="position_code" h:text="${position_code}"><br>
+                            <input class="position_code" th:text="${position_code}"><br>
 
                             <label>部署</label><br>
-                            <input class="department_code" h:text="${department_code}"><br>
+                            <input class="department_code" th:text="${department_code}"><br>
                                 
                             <label>入社日</label><br>
-                            <input class="entry_date" h:text="${entry_date}"><br>
+                            <input class="entry_date" th:text="${entry_date}"><br>
                         </div>
                     </div> 
                     <div class="under">登録完了しました。</div>
