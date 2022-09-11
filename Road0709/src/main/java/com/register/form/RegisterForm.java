@@ -15,7 +15,7 @@ import lombok.Data;
 	@Data
 	public class RegisterForm  {
 		@Size(max=8, message = "IDは８桁以内で入力してください")
-		@NotEmpty(message = "IDを入力してください")
+		@NotEmpty(message = "   IDを入力してください")
 	    private String user_id;
 		
 		@NotEmpty(message = "名前を入力してください")
@@ -31,17 +31,17 @@ import lombok.Data;
 	    private String upn;
 		
 //		@JsonFormat(pattern="yyyy-MM-dd")
-//		(message = "生年月日を入力してください")
+		@NotNull(message = "生年月日を入力してください")
 		@DateTimeFormat(pattern = "yyyy-MM-dd")
 	    private  Date birthday;
 		
 		@NotNull(message = "性別を入力してください")
 	    private Integer gender;
 	
-//		@NotNull(message = "出身都道府県を入力してください")
+		@NotNull(message = "出身都道府県を入力してください")
 	    private Integer prefecture_code;
 		
-//		@NotNull(message = "部署を入力してください")
+		@NotNull(message = "部署を入力してください")
 	    private Integer department_code;
 	    
 	    @DateTimeFormat(pattern = "yyyy-MM-dd")

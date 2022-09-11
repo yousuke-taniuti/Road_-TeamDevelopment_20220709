@@ -20,15 +20,15 @@
 }
 
 .center{
-    width: 700px;
+    width: 900px;
     height: 380px;
-    margin-left: 150px;
+    margin-left: 50px;
     vertical-align: middle;
     background-color: white;
 }
 
 .left{
-    width: 350px;
+    width: 450px;
     height: 450px;
     float: left;
     display: flex;
