@@ -52,7 +52,8 @@ public class UserController {
   }
   
   @RequestMapping(value = "/register")
-  public String top(Model model,@ModelAttribute RegisterForm registerForm) {
+  public String top(Model model) {
+  model.addAttribute("RegisterForm", new RegisterForm());
   
   List<Prefecture> prefecture = prefecturerepository.findAll();
   model.addAttribute("prefecture", prefecture);
@@ -72,6 +73,7 @@ public class UserController {
 	      for (ObjectError error : result.getAllErrors()) {
 	        errorList.add(error.getDefaultMessage());
 	      }
+	      model.addAttribute("RegisterForm", registerForm);
 	      model.addAttribute("validationError", errorList);
 	      
 	      List<Prefecture> prefecture = prefecturerepository.findAll();

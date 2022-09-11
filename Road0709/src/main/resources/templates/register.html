@@ -15,41 +15,43 @@
     <div class="wrapper"> 
         <div class="ground">
         <div class="header">新規登録</div>
-      <!--   <div th:if="${validationError}" th:each="error : ${validationError}">
+        <div th:if="${validationError}" th:each="error : ${validationError}">
      		 <label class="text-danger" th:text="${error}"></label>
      		 
-    	</div> -->
-        <form th:action="@{/register_completion}" th:object="${registerForm}" th:method="post">
+    	</div>
+        <form th:action="@{/register_completion}" th:object="${RegisterForm}" th:method="post">
             <div class="center">
                 <div class="left">
                     <div class="id">
                         <label for="user_id">ID<span class="text-danger"></span></label><br>
                         <input type="text" name="user_id"  th:field="*{user_id}"  size="20">
-                    <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}" style = color:red></span>
-                        
+                     
+                        <!-- 個別エラーメッセージを表示 -->
+           <!--            <span>class="text-danger" th:if="${#fields.hasErrors('id')}" th:errors="*{id}>
+                              id error
+                        </span>   -->
                     </div>
                     
                     <div class="name">
                         <label for="name">名前</label><br>
                         <input type="text" name="name" th:field="*{name}" size="20">
-                         <span th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style = color:red></span>
+                      <!--   <span>class="text-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}>
+                              id error
+                        </span>  -->
                     </div>
 
                     <div class="kana">
                         <label for="kana">名前(カナ)</label><br>
                         <input type="text" name="kana" th:field="*{name_kana}" size="20">
-                        <span th:if="${#fields.hasErrors('name_kana')}" th:errors="*{name_kana}" style = color:red></span>
                     </div>
 
                     <div  class="password">
                         <label for="password">パスワード</label><br>
                         <input type="password" name="password" th:field="*{password}" size="20">
-                        <span th:if="${#fields.hasErrors('password')}" th:errors="*{password}" style = color:red></span>
                     </div>
                     <div  class="upn">
                         <label for="upn">メールアドレス</label><br>
                         <input type="text" name="upn" th:field="*{upn}" size="20">
-                        <span th:if="${#fields.hasErrors('upn')}" th:errors="*{upn}" style = color:red></span>
                     </div>
                 </div>
 
@@ -58,31 +60,30 @@
                        <div class="date">
                             <label for="birthday">生年月日</label><br>
                             <input type="date" name="birthday" th:field="*{birthday}" size="20">
-                            <span th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" style = color:red></span>
+                            
                         </div>
 
                         <div class="gender">
                             <label for="gender">性別</label><br>
                             <input type="radio" name="gender" value="1" th:field="*{gender}" > 男性
                             <input type="radio" name="gender" value="2" th:field="*{gender}"> 女性 
-                            <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" style = color:red></span>                   
+                                                
                         </div>
 
                         <div class="from">
                             <label for="prefecture_code">出身都道府県</label><br>
                             <select name="prefecture_code" th:value="*{prefecture_code}">
-                            <option value="">=選択肢=</option>
-                            <option th:each="item : ${prefecture}" th:value="${item.prefecture_code}" th:text="${item.prefecture_name}" ></option></select>
-                           <span th:if="${#fields.hasErrors('prefecture_code')}" th:errors="*{prefecture_code}" style = color:red></span>
-                            
+                                <option value="">=選択肢=</option>
+                                <option th:each="item : ${prefecture}" th:value="${item.prefecture_code}" th:text="${item.prefecture_name}" ></option>
+                                
+                            </select>
                         </div>
                         <div  class="busyo">
                             <label for="department_code">部署コード</label><br>
                             <select name="department_code" th:value="*{department_code}">
-                            <option value="">=選択肢=</option>                        
-                            <option th:each="item : ${department}" th:value="${item.department_code}" th:text="${item.department_name}" ></option></select>
-                          	<span th:if="${#fields.hasErrors('department_code')}" th:errors="*{department_code}" style = color:red></span>
-                            
+                                <option value="">=選択肢=</option>                        
+                                <option th:each="item : ${department}" th:value="${item.department_code}" th:text="${item.department_name}" ></option>
+                            </select>
                         </div>
                     </div> 
                         <input type="submit" value="登録" class="next"></input>
