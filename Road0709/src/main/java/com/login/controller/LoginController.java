@@ -1,10 +1,20 @@
 package com.login.controller;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+@Controller
 public class LoginController {
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
-
-	}
-
+    //GETメソッド
+    @GetMapping("/login")
+    public String getLoginInfo() {
+        //login.htmlに画面遷移
+        return "login/login";
+    }
+    
 }
+//    POSTメソッド
+//    @PostMapping("/login")
+//    public String postLoginInfo(Model model) {
+//        return "login/login";
+//    }
