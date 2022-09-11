@@ -16,14 +16,13 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.register.entity.Department;
-import com.register.entity.Prefecture;
 import com.register.form.RegisterForm;
-import com.register.repository.DepartmentRepository;
-import com.register.repository.PrefectureRepository;
 import com.register.service.UserService;
-
-
+import com.search.entity.Department;
+import com.search.entity.Prefecture;
+import com.search.repository.DepartmentRepository;
+import com.search.repository.PrefectureRepository;
+;
 /**
  * ユーザー情報 Controller
  */

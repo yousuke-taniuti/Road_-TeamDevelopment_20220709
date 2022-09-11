@@ -5,10 +5,10 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.register.entity.User;
-import com.register.entity.User_auth;
 import com.register.form.RegisterForm;
 import com.register.repository.UserRepository;
-import com.register.repository.User_authRepository;
+import com.search.entity.User_auth;
+import com.search.repository.User_authRepository;
 
 	/**
 	 * ユーザー情報 Serviceuser
