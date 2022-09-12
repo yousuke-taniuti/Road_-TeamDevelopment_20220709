@@ -42,7 +42,7 @@ public class SalaryController {
 		}
 		model.addAttribute("salaryList", salaryList);
 
-		return "html/salary";
+		return "html/salary_admin";
 	}
 	
 //	管理者が給与編集ボタンを押下したときに動く
