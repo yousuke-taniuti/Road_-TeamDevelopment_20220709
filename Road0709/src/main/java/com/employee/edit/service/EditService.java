@@ -1,11 +1,12 @@
 package com.employee.edit.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.employee.edit.editRequest.EditRequest;
 import com.employee.edit.entity.Edit;
 import com.employee.edit.repository.EditRepository;
-
+@Service
 public class EditService {
  
 	@Autowired

@@ -7,7 +7,7 @@ import com.employee.edit.entity.Edit;
 
 
 /**
- * ユーザー情報 Repository
+ * ユ－ーザー情報 Repository
  */
 @Repository
 public interface EditRepository extends JpaRepository<Edit, String> {}

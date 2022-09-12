@@ -70,7 +70,7 @@ public class Edit{
   @Column(name = "department_code")
   private Integer department_code;
   /**
-   * 入社日
+   * 入社日ｓｓ
    */
   @Column(name = "entry_date")
   private Date entry_date;

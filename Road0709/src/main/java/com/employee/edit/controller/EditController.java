@@ -1,6 +1,7 @@
 package com.employee.edit.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
@@ -13,18 +14,18 @@ import com.employee.edit.editRequest.EditRequest;
 import com.employee.edit.entity.Edit;
 import com.employee.edit.service.EditService;
 
+@Controller
 public class EditController {
-	
+
 	@Autowired
 	private EditService editService;
-	
-	@GetMapping(value = "/s&l")
+
+	@GetMapping(value = "/edit/update/s&l")
 	public String index(Model model) {
 		EditRequest editRequest = new EditRequest();
 		model.addAttribute("editRequest", editRequest);
 		return "search";
 	}
-	
 
 //	（ログイン画面できたら）ログイン中のユーザーIDを取得
 //	@GetMapping("/")
@@ -60,16 +61,16 @@ public class EditController {
 		editRequest.setEntry_date(edit.getEntry_date());
 //		List<Edit> editList = editService.findAll();
 		model.addAttribute("editRequest", editRequest);
-		return "templates/edit";
+		return "edit";
 	}
 
 	@RequestMapping(value = "/edit/update", method = RequestMethod.POST)
 	public String update(@Validated @ModelAttribute EditRequest editRequest, BindingResult result, Model model) {
-		
+
 		editService.update(editRequest);
-		
-		model.addAttribute("UpdateRequest",editRequest);
-		
+
+		model.addAttribute("UpdateRequest", editRequest);
+
 		return "editcomplete";
 //	  @RequestMapping("/")
 //	  public String update(@Valid EditRequest editRequest, BindingResult bindingResult) {
@@ -88,4 +89,3 @@ public class EditController {
 	}
 
 }
-

@@ -4,18 +4,20 @@
 <meta charset="utf-8"> 
 <meta http-equiv="X-UA-Compatible" content="IE=edge"> 
 <title>給与編集画面</title> 
-<link th:href="@{/css/editcomplete.css}" rel="stylesheet"></head>
+<link th:href="@{/css/editcomplete.css}" rel="stylesheet"></link>
+</head>
 <body> 
     <div class="wrapper"> 
         <div class="ground">
         <div class="header">社員編集完了画面</div>
             <div class="center">
-            <form th:action="@{/editcomplete}" th:object="${UpdateRequest}" th:method="post">
+            <form th:action="@{/edit/update/s&l}" th:object="${UpdateRequest}">
                 <div class="main">
                     
                     <p class="word">編集が完了しました。</p>
                     
-                    <input th:href="@{/serch&list}" type="submit" value="一覧画面に戻る" class="footer">
+                    <input th:href="@{/search}" type="submit" value="一覧に戻る"
+						class="next">
                 
                 </div>
             </form>
@@ -23,4 +25,4 @@
         </div>
     </div>
 </body>
-</html>
+</html><!--  -->
