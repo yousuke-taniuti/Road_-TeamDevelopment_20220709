@@ -14,7 +14,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 /**
- * ユーザー情報 リクエストデータ
+ * ユーザー情報 リクエストデー-タ
  */
 @EqualsAndHashCode(callSuper=false)
 @Data

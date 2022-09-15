@@ -12,7 +12,6 @@ import lombok.Data;
  * ユーザー情報d Entity
  */
 @Entity
-//@Embeddable
 @Data
 @Table(name = "employee")
 public class Edit{
