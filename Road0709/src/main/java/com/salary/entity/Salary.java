@@ -1,7 +1,6 @@
 package com.salary.entity;
 
 import java.io.Serializable;
-import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -69,7 +68,7 @@ public class Salary implements Serializable {
 	 */
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "salary_date")
-	private Date salary_date;
+	private String salary_date;
 }	
 
 

@@ -1,65 +1,45 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org"
-	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>給与画面</title>
-<link rel="stylesheet" th:href="@{/css/salary_completion.css}"></link>
-</head>
+  <meta charset="UTF-8">
+    <link rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css"
+    integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B"
+    crossorigin="anonymous">
+  <title>給与画面</title>
+  <link rel="stylesheet" href="./static/salary_completion.css"></head>
 <body>
-	<div class="wrapper">
-		<div class="ground">
-			<div class="header">給与画面</div>
-			<div th:object="${salaryDate}">
-				<div class="center clearfix">
-					<table class="table table-striped">
-						<tr>
-							<th>ID</th>
-							<th>給料ID</th>
-							<th>名前</th>
-							<th>給与</th>
-							<th>税</th>
-							<th>保険料</th>
-							<th>交通費</th>
-							<th>総支給額</th>
-							<th>交付日</th>
-							<th>オプション</th>
-						</tr>
-						<tr th:each="salary : ${salaryList}" th:object="${salary}">
-							<td th:text="${salary.user_id}"></td>
-							<td th:text="${salary.salary_number}"></td>
-							<td th:text="${salary.name}"></td>
-							<td th:text="${salary.base_salary}"></td>
-							<td th:text="${salary.tax}"></td>
-							<td th:text="${salary.premium}"></td>
-							<td th:text="${salary.carfare}"></td>
-							<td th:text="${salary.gross_payment}"></td>
-							<td th:text="${salary.salary_date}"></td>
-						</tr>
-					</table>
-
-
-
-
-
-					<form action="/salary_csv" method="get">
-						<input type="submit" class="botton2" value="csv">
-					</form>
-
-
-					<div class="button clearfix">
-
-
-						<form action="/serch&list" method="get">
-							<button type="submit" class="footer" th:href="@{/serch&list}">検索一覧に戻る</button>
-						</form>
-
-<!--c  -->
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+  <div class="wrapper"> 
+    <div class="ground">
+      <h3 class="header">給与画面</h3>
+        <div class="center">
+          <table class="table table-striped">
+          <tr>
+            <th>ID</th>
+            <th>名前</th>
+            <th>給与</th>
+            <th>税</th>
+            <th>保険料</th>
+            <th>交通費</th>
+            <th>総支給額</th>
+            <th>交付日</th>
+          </tr>
+          <tr th:each=" : ${}">
+            <td><a th:href="@{/{}(=${.})}" th:text="${.}"></a></td>
+            <td th:text="${.}"></td>
+            <td th:text="${.}"></td>
+            <td th:text="${.}"></td>
+          </tr>
+          </table>    
+          <form action="regist" method="get">
+            <button type="submit" class="footer">検索&一覧に戻る</button>
+          </form>
+        </div>   
+        <form action="regist" method="get">
+          <button type="submit" class="footer1" >編集</button>
+          <button type="submit" class="footer2" >削除</button>
+        </form>
+    </div>
+  </div>
 </body>
 </html>

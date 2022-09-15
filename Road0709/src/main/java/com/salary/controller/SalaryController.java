@@ -50,7 +50,7 @@ public class SalaryController {
 	  public String displayView(@PathVariable String user_id, Model model) {
 	    Salary salary = salaryService.findById(user_id);
 	    model.addAttribute("salaryList", salary);
-	    return "html/salary_admin";
+	    return "salary_admin";
 	  }
 
 ////	給与編集画面
@@ -69,14 +69,14 @@ public class SalaryController {
 //	給与編集画面
 	@GetMapping("/salary_s")
 	public String getSalary_s() {
-		return "html/salary_s";
+		return "salary_s";
 	}
 
 
-//	検索＆一覧a
-	@GetMapping("/serch&list")
+//	検索＆一覧
+	@GetMapping("/serch&lists")
 	public String getSerch() {
-		return "html/serch&list";
+		return "serch";
 	}
 
 }
