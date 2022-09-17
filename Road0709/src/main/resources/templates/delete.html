@@ -9,15 +9,21 @@
 <body> 
     <div class="wrapper"> 
         <div class="ground">
-        <div class="header">削除完了画面</div>
+        <div class="header">社員編集完了画面</div>
             <div class="center">
-                <div class="main">
-                    <p class="word">削除が完了しました。</p>
+            <form th:action="@{/edit/update/s&l}" th:object="${UpdateRequest}">
+                    <div class="word">
+                    	<h2 >編集が完了しました。</h2>
+                    </div>
                     
+                    <div class="back"> 
                     <input th:href="@{/search}" type="submit" value="一覧に戻る"
 						class="next">
+					</div>
+                    
+					
                 
-                </div>
+            </form>
             </div>
         </div>
     </div>

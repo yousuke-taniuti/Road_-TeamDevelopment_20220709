@@ -7,6 +7,12 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link th:href="@{/webjars/bootstrap/3.3.7-1/css/bootstrap.min.css}"
+	rel="stylesheet"></link>
+<script th:src="@{/webjars/jquery/1.11.1/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/3.3.7-1/js/bootstrap.min.js}"></script>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet" th:href="@{/css/edit.css}"></link>
 <title>社員編集</title>
 </head>
@@ -17,89 +23,73 @@
 		<!--  <label class="text-danger" th:text="${error}"></label>-->
 		<div class="ground">
 
-			<div class="edit">
-				<p>社員編集</p>
-			</div>
+			<div class="header">社員編集</div>
 			<!--<form>
      				<input type="file" name="file"/>
       				<button type="submit" formenctype="multipart/form-data" formmethod="post" formaction="/upload">MultipartFile送信</button>
  				</form>  -->
 
-			<form  th:action="@{/edit/update}" th:object="${editRequest}"
+			<form th:action="@{/edit/update}" th:object="${editRequest}"
 				th:method="post">
 
 
 				<div class="center">
-					<div class="main clearfix">
-						<table class="main-left">
-							<tr>
-								<th>ユーザーID</th>
-								<td><input class="user_id" type="text" name="user_id"
-									value="" size="35" th:field="*{user_id}"></td>
-								<td th:if="${validationError}"
-									th:each="error : ${validationError}"><label
-									class="text-danger" th:text="${error}"></label></td>
+					<div class="left">
+						<div class="id">
+							<label for="user_id">ID<span class="text-danger"></span></label><br>
+							<input type="text" name="user_id" th:field="*{user_id}" size="20">
+							<span th:if="${#fields.hasErrors('user_id')}"
+								th:errors="*{user_id}" style="color: red"></span>
 
-							</tr>
-							<tr>
-								<th>名前</th>
-								<td><input class="name" type="text" name="name" value=""
-									size="35" th:field="*{name}"></td>
-								<td th:if="${validationError}"
-									th:each="error : ${validationError}"><label
-									class="text-danger" th:text="${error}"></label></td>
-							</tr>
+						</div>
 
-							<tr>
-								<th>カナ</th>
-								<td><input class="name_katakana" type="text"
-									name="name_katakana" value="" size="35" th:field="*{name_kana}"></td>
-								<td th:if="${validationError}"
-									th:each="error : ${validationError}"><label
-									class="text-danger" th:text="${error}"></label></td>
-							</tr>
+						<div class="name">
+							<label for="name">名前</label><br> <input type="text"
+								name="name" th:field="*{name}" size="20"> <span
+								th:if="${#fields.hasErrors('name')}" th:errors="*{name}"
+								style="color: red"></span>
+						</div>
 
-							<tr>
-								<th>パスワード</th>
-								<td><input class="password" type="text" name="password"
-									value="" size="35" th:field="*{password}"></td>
-								<td th:if="${validationError}"
-									th:each="error : ${validationError}"><label
-									class="text-danger" th:text="${error}"></label></td>
-							</tr>
+						<div class="kana">
+							<label for="kana">名前(カナ)</label><br> <input type="text"
+								name="kana" th:field="*{name_kana}" size="20"> <span
+								th:if="${#fields.hasErrors('name_kana')}"
+								th:errors="*{name_kana}" style="color: red"></span>
+						</div>
 
-							<tr>
-								<th>メールアドレス</th>
-								<td><input class="email" type="text" name="email" value=""
-									size="35" th:field="*{upn}"></td>
-								<td th:if="${validationError}"
-									th:each="error : ${validationError}"><label
-									class="text-danger" th:text="${error}"></label></td>
-							</tr>
+						<div class="password">
+							<label for="password">パスワード</label><br> <input
+								type="password" name="password" th:field="*{password}" size="20">
+							<span th:if="${#fields.hasErrors('password')}"
+								th:errors="*{password}" style="color: red"></span>
+						</div>
+						<div class="upn">
+							<label for="upn">メールアドレス</label><br> <input type="text"
+								name="upn" th:field="*{upn}" size="20"> <span
+								th:if="${#fields.hasErrors('upn')}" th:errors="*{upn}"
+								style="color: red"></span>
+						</div>
+					</div>
 
-						</table>
+					<div class="right">
+						<div class="right_inner">
+							<div class="date">
+								<label for="birthday">生年月日</label><br> <input type="date"
+									name="birthday" th:field="*{birthday}" size="20"> <span
+									th:if="${#fields.hasErrors('birthday')}"
+									th:errors="*{birthday}" style="color: red"></span>
+							</div>
 
-						<table class="main-right clearfix">
-							<tr>
-								<th>生年月日</th>
-								<td><input class="birthday" type="date" name="birthday"
-									value="" th:field="*{birthday}"></td>
-
-							</tr>
-
-							<tr>
-								<th>性別</th>
-								<td><input type="radio" name="gender" value="1"
-									th:field="*{gender}"> 男 <input type="radio"
-									name="gender" value="2" th:field="*{gender}"> 女</td>
-								<td th:if="${validationError}"
-									th:each="error : ${validationError}"><label
-									class="text-danger" th:text="${error}"></label></td>
-							</tr>
-
-							<tr>
-								<th>出身地</th>
-								<td><select th:field="*{prefecture_code}" name="prefecture">
+							<div class="gender">
+								<label for="gender">性別</label><br> <input type="radio"
+									name="gender" value="1" th:field="*{gender}"> 男性 <input
+									type="radio" name="gender" value="2" th:field="*{gender}">
+								女性 <span th:if="${#fields.hasErrors('gender')}"
+									th:errors="*{gender}" style="color: red"></span>
+							</div><br>
+							<!--  <div class="form">
+							<label for="prefecture_code">出身都道府県</label><br> 
+							<select th:field="*{prefecture_code}" name="prefecture">
 										<option value="1">北海道</option>
 										<option value="2">青森県</option>
 										<option value="3">岩手県</option>
@@ -147,37 +137,70 @@
 										<option value="45">宮崎県</option>
 										<option value="46">鹿児島県</option>
 										<option value="47">沖縄県</option>
-								</select></td>
-							</tr>
-
-							<tr>
-								<th>部署</th>
-								<td><select name="department_code"
+								</select>
+								<span th:if="${#fields.hasErrors('prefecture_code')}"
+									th:errors="*{prefecture_code}" style="color: red"></span>
+								</div>-->
+								
+								
+							 <div class="from">
+								<label for="prefecture_code">出身都道府県</label><br> <select
+									name="prefecture_code" th:value="*{prefecture_code}">
+									<option value="">=選択肢=</option>
+									<option th:each="item : ${prefecture}"
+										th:value="${item.prefecture_code}"
+										th:text="${item.prefecture_name}"></option>
+								</select> <span th:if="${#fields.hasErrors('prefecture_code')}"
+									th:errors="*{prefecture_code}" style="color: red"></span>
+							</div>
+							
+							
+							
+							<!-- <div class="busyo">
+							<label for="department_code">部署</label><br> 
+							<select name="department_code"
 									th:field="*{department_code}">
-										<option value="0">本社</option>
-										<option value="1">東京支店</option>
-										<option value="2">神奈川支店</option>
-										<option value="3">大阪支店</option>
-										<option value="4">仙台支店</option>
-										<option value="5">新潟支店</option>
-								</select></td>
-							</tr>
+										<option value="1">営業部</option>
+										<option value="2">IT事業部</option>
+										<option value="3">経理部</option>
+								</select>
+								<span th:if="${#fields.hasErrors('department_code')}"
+									th:errors="*{department_code}" style="color: red"></span>
+							</div> -->
+							
+							
+							
+							
+							 <div class="busyo">
+								<label for="department_code">部署コード</label><br> <select
+									name="department_code" th:value="*{department_code}">
+									<option value="">=選択肢=</option>
+									<option th:each="item : ${department}"
+										th:value="${item.department_code}"
+										th:text="${item.department_name}"></option>
+								</select> <span th:if="${#fields.hasErrors('department_code')}"
+									th:errors="*{department_code}" style="color: red"></span>
 
-							<tr>
-								<th>入社日</th>
-								<td><input class="entry_date" type="date" name="entry_date"
-									value="" th:field="*{entry_date}"></td>
-								<!-- <td th:if="${#fields.hasErrors('entry_date')}" th:errors="*{entry_date}">hire_date Error</td> -->
-							</tr>
 
-						</table>
+							</div> 
+							
+							<div class="date">
+                            <label>入社日</label><br>
+                            <input class="entry_date" type="date" name="entry_date"
+									value="" th:field="*{entry_date}">
+                            <span th:if="${#fields.hasErrors('entry_date')}" th:errors="*{entry_date}" style = color:red></span>
+                        </div>
 
+
+
+						</div>
+						<div>
+							<input th:href="@{/editcomplete}" type="submit" value="編集"
+								class="next"> <input
+								th:href="@{/{user_id}/delete(user_id=${user_id})}" type="submit"
+								class="back" value="削除">
+						</div>
 					</div>
-					<input th:href="@{/editcomplete}" type="submit" value="編集"
-						class="next">
-				</div>
-				<div>
-					<a th:href="@{/{user_id}/delete(user_id=${user_id})}"   type="submit" class="delete">削除</a>
 				</div>
 			</form>
 		</div>
