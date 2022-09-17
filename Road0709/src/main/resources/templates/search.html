@@ -6,11 +6,11 @@
   </head>
 	<link rel="stylesheet" href="/css/search&list.css"></head>
   <body>
-    <form th:method="post" name="form1" th:action="@{/search＆list}">
   <div class="wrapper"> 
     <div class="ground">
       <h3 class="header">検索＆一覧画面</h3>
         <div class="center">
+        <form th:method="post" name="form1" th:action="@{/searchList}">
           <div class="main">
             <div class="content-left">
               <label>ユーザーID : <input type="text" class="form-control1" id="user_id" name="userId" th:value="${userId}"/></label><br>
@@ -40,6 +40,7 @@
               <a th:href="@{/salary}"><input type="button" class="footer"  value="給与画面" ></input></a>
             </div>
           </div> 
+          </form>
           <div style="width: 100%; height: 330px; overflow-y: scroll; border: 1px #999999 solid;">
           <table class="table table-striped">
           <tr>
@@ -64,7 +65,12 @@
             <td th:text="${data.department_name}"/>
             <td th:text="${#dates.format(data.entry_date,'yyyy-MM-dd')}">
             <td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
-			<a th:href="@{/edit}"><input type="button" class="footer3" value="編集画面" ></input></a>
+
+            <form action="/edit" method="get">
+				<input  type="submit" name="edit" class="button1" value="編集画面"> 
+				<input type="hidden" name="user_id" th:value="${data.userId}">
+			</form>
+			
 			<td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
 			<a th:href="@{/salary}"><input type="button" class="footer4" value="給与画面" ></input></a>
           </tr>

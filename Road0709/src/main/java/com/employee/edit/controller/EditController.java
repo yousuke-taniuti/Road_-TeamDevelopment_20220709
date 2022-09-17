@@ -61,7 +61,6 @@ public class EditController {
 	 */
 	@GetMapping(value = "/edit")
 	public String displayEdit(EditRequest editRequests, Model model) {
-		editRequests.setUser_id("1");
 		Edit edit = editService.findById(editRequests.getUser_id());
 		EditRequest editRequest = new EditRequest();
 		editRequest.setUser_id(edit.getUser_id());

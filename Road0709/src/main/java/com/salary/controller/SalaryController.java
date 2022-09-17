@@ -9,6 +9,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
+import com.completed.request.EditCompletedRequest;
 import com.salary.entity.Salary;
 import com.salary.service.SalaryService;
 
@@ -41,7 +42,8 @@ public class SalaryController {
 			}
 		}
 		model.addAttribute("salaryList", salaryList);
-
+		model.addAttribute("editCompletedRequests", new EditCompletedRequest());
+		
 		return "html/salary_admin";
 	}
 	
@@ -50,7 +52,7 @@ public class SalaryController {
 	  public String displayView(@PathVariable String user_id, Model model) {
 	    Salary salary = salaryService.findById(user_id);
 	    model.addAttribute("salaryList", salary);
-	    return "salary_admin";
+	    return "html/salary_admin";
 	  }
 
 ////	給与編集画面
@@ -65,12 +67,6 @@ public class SalaryController {
 //        return "html/salary_s";
 //    }
 	
-	
-////	給与編集画面
-//	@GetMapping("/salary_s")
-//	public String getSalary_s() {
-//		return "salary_s";
-//	}
 
 
 //	検索＆一覧

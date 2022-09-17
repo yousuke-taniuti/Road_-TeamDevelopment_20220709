@@ -16,7 +16,7 @@ public class SecurityConfig {
         http.formLogin(login -> login
                 .loginProcessingUrl("/login")
                 .loginPage("/login")
-                .defaultSuccessUrl("/searchList")
+                .defaultSuccessUrl("/searchList",true)
                 .failureUrl("/login?error")
                 .usernameParameter("id")
                 .passwordParameter("pass")
@@ -28,6 +28,7 @@ public class SecurityConfig {
         ).authorizeHttpRequests(authz -> authz
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
                 .mvcMatchers("/register").permitAll()
+                .mvcMatchers("/register_completion").permitAll()
                 .anyRequest().authenticated()
         );
         return http.build();

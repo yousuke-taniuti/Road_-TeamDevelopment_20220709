@@ -52,7 +52,7 @@ public class SearchController {
 		return "search";
 	}
 	
-	@RequestMapping(value="/search＆list",method = RequestMethod.POST)
+	@RequestMapping(value="/searchList",method = RequestMethod.POST)
 	public String login(Model model,@ModelAttribute SearchForm searchForm){
 		model.addAttribute("userId", searchForm.getUserId());
 		model.addAttribute("userName", searchForm.getUserName());

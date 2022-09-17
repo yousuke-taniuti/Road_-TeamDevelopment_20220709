@@ -36,17 +36,17 @@
 							<td th:text="${salary.carfare}"></td>
 							<td th:text="${salary.gross_payment}"></td>
 							<td th:text="${salary.salary_date}"></td>
-							<td><a
-								th:href="@{/salary/{salary_number}(salary_number=${salary.salary_number})}"
-								class="button1" aria-disabled="true">編集</a></td>
+							<td>
+
+							
 
 							<!--  <a th:href="@{/user/{id}/edit(id=*{id})}" class="btn btn-primary disabled" aria-disabled="true">　編集　</a> -->
 
-							<!-- <form action="/salary_s" method="get">
+							<form action="/salary_s" method="get">
 									<input  type="submit" name="edit" class="button1" value="編集"> 
-										
-									<input type="hidden" name="salary_number" th:value="${salary.salary_number}">
-								</form> -->
+									<input type="hidden" name="salaryNumber" th:value="${salary.salary_number}">
+							</form>
+								</td>
 						</tr>
 					</table>
 
@@ -62,10 +62,7 @@
 					<div class="button clearfix">
 
 
-						<form action="/serch&list" method="get">
-							<button type="submit" class="footer" th:href="@{/serch&list}">一覧に戻る</button>
-						</form>
-						
+						  <button type="submit" class="footer" onclick="location.href='/searchList'">>検索一覧に戻る</button>
 						<!--c  -->
 
 
