@@ -1,31 +1,31 @@
 <!DOCTYPE html>
-<html lang="jp">
-<head>
-<meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="delete.css">
-<title>社員削除完了</title>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>削除完了画面</title> 
+<link th:href="@{/css/editcomplete.css}" rel="stylesheet"></link>
 </head>
-<body>
-	<div id="wrapper">
-		<div class="ground">
-			<div class="deletion_completed">
-				<p>社員削除完了</p>
-			</div>
-			<div class="center">
-				<main class="main">
-					<div class="completed">
-						<label>削除完了しました</label>
-						<div class="backTop">
-							<button type="submit" class="footer" onclick="">トップに戻る</button>
-						</div>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">社員編集完了画面</div>
+            <div class="center">
+            <form th:action="@{/edit/update/s&l}" th:object="${UpdateRequest}">
+                    <div class="word">
+                    	<h2 >編集が完了しました。</h2>
+                    </div>
+                    
+                    <div class="back"> 
+                    <input th:href="@{/search}" type="submit" value="一覧に戻る"
+						class="next">
 					</div>
-				</main>
-			</div>
-
-		</div>
-	</div>
-
+                    
+					
+                
+            </form>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

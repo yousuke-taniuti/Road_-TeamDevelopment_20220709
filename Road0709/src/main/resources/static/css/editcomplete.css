@@ -2,18 +2,57 @@
     margin: 0 auto;
     width: 1000px
 }
+
+.ground{
+    background-color: #D9E5FF;
+    height: 600px;
+}
+
 .header{
     font-size:50px;
     float: auto;
-    margin-top: 250px;
+    margin-top: 40px;
     height: 70px;
     margin-left: 300px;
     padding-top: 20px;
 }
-.footer{
-    font-size:20px;
-    margin-left: 380px;
-    margin-top: 20px;
-    padding: 20px 40px 5px 40px;
-    background-color: #9BF9CC;
+
+.center{
+    width: 800px;
+    height: 480px;
+    margin-left: 100px;
+    vertical-align: middle;
+    background-color: white;
 }
+
+.main{
+    padding-top: 200px;
+    margin-left: 100px;
+    font-size:20px;
+}
+
+.word {
+	font-size: 30px;
+	margin-left:200px;
+	padding-top:130px;
+
+}
+
+.back {
+	padding-top: 50px; 
+	margin-left:100px;
+}
+
+
+.next{
+	   font-size:20px;
+    margin-left: 200px;
+    padding: 5px 40px 5px 40px;
+    color: white;
+    background-color: #2DFF57;
+	
+}
+
+
+
+
