@@ -1,10 +1,11 @@
 package com.login.repository;
 
-public class LoginRepository {
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-	public static void main(String[] args) {
-		// TODO 自動生成されたメソッド・スタブ
+import com.register.entity.Employee;
 
-	}
 
+@Repository
+public interface LoginRepository extends JpaRepository<Employee , String> {  
 }
