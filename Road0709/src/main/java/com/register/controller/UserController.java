@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -42,7 +43,8 @@ public class UserController {
   @Autowired
  private DepartmentRepository departmentrepository;
   
-
+  @Autowired
+  PasswordEncoder passwordEncoder;
   
   @GetMapping(value = "/")
   public String displayAdd(Model model) {
@@ -86,6 +88,8 @@ public class UserController {
 	  Date date = new Date();
 	  registerForm.setEntry_date(date);
 	  
+	  //パスワードをハッシュ化して登録する
+	  registerForm.setPassword(passwordEncoder.encode(registerForm.getPassword()));
 	  
 	  
 	  	// ユーザー情報の登録

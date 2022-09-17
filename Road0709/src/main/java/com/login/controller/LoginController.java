@@ -11,7 +11,7 @@ public class LoginController {
     @GetMapping("/login")
     public String getLoginInfo() {
         //login.htmlに画面遷移
-        return "html/login";
+        return "login";
     }
     /*@GetMapping("/")
     public String topPage() {

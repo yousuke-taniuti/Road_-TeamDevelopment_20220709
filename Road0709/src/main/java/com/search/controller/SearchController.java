@@ -40,7 +40,7 @@ public class SearchController {
 	@Autowired
     private User_authRepository user_authrepository;
 	
-	@GetMapping("/search＆list")
+	@GetMapping("/searchList")
 	public String displayList(Model model) {
 		
 		List<Prefecture> prefecturere = prefecturerepository.findAll();

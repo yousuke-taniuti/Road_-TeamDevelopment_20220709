@@ -66,11 +66,11 @@ public class SalaryController {
 //    }
 	
 	
-//	給与編集画面
-	@GetMapping("/salary_s")
-	public String getSalary_s() {
-		return "salary_s";
-	}
+////	給与編集画面
+//	@GetMapping("/salary_s")
+//	public String getSalary_s() {
+//		return "salary_s";
+//	}
 
 
 //	検索＆一覧
