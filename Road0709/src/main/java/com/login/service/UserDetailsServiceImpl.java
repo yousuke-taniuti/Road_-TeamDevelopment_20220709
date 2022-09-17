@@ -2,6 +2,7 @@ package com.login.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
@@ -10,24 +11,24 @@ import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import com.login.dao.LoginUserDao;
-import com.register.entity.employee;
+import com.login.repository.LoginRepository;
+import com.register.entity.Employee;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService{
 
     //DBからユーザ情報を検索するメソッドを実装したクラス
     @Autowired
-    private LoginUserDao userDao;
+    private LoginRepository loginRepository ;
 
     @Override
     public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
 
-        employee user = userDao.findUser(userName);
+        Optional<Employee> user = loginRepository.findById(userName);
 
+        
         if (user == null) {
             throw new UsernameNotFoundException("User" + userName + "was not found in the database");
         }
@@ -38,11 +39,9 @@ public class UserDetailsServiceImpl implements UserDetailsService{
         GrantedAuthority authority = new SimpleGrantedAuthority("USER");
         grantList.add(authority);
 
-        //rawDataのパスワードは渡すことができないので、暗号化
-        BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
-
         //UserDetailsはインタフェースなのでUserクラスのコンストラクタで生成したユーザオブジェクトをキャスト
-        UserDetails userDetails = (UserDetails)new User(user.getName(), encoder.encode(user.getPassword()),grantList);
+        UserDetails userDetails = (UserDetails)new User(user.orElse(new Employee()).getName(),
+        		(user.orElse(new Employee()).getPassword()),grantList);
 
         return userDetails;
     }

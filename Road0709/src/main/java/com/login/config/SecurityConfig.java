@@ -18,21 +18,40 @@ public class SecurityConfig {
                 .loginPage("/login")
                 .defaultSuccessUrl("/")
                 .failureUrl("/login?error")
+                .usernameParameter("id")
+                .passwordParameter("pass")
                 .permitAll()
+                
         ).logout(logout -> logout
-                .logoutSuccessUrl("/")
+                .logoutSuccessUrl("/login?logout")
+                .logoutUrl("/logout")
         ).authorizeHttpRequests(authz -> authz
                 .requestMatchers(PathRequest.toStaticResources().atCommonLocations()).permitAll()
-                .mvcMatchers("/").permitAll()
-                .mvcMatchers("/general").hasRole("GENERAL")
-                .mvcMatchers("/admin").hasRole("ADMIN")
+                .mvcMatchers("/register").permitAll()
                 .anyRequest().authenticated()
         );
         return http.build();
     }
 
+   
+    
+  
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
+    
+    /** 認証の設定 
+    @Override
+    protected void configure(AuthenticationManegerBuilder auth) throws Exception{
+    	
+    	
+    	
+    	PasswordEncoder encoder = passwordEncoder();
+        auth
+        
+            .userDetailsService(userDetailsService)
+            .oasswordEncoder(encoder);
+    
+    }*/
 }
