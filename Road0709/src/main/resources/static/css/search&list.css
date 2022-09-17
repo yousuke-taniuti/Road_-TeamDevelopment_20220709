@@ -104,6 +104,14 @@
     margin-left: 50px;
     padding: 5px 10px 5px 10px;
     color: white;
+    background-color:rgb(251, 88, 120);
+}
+
+.footer4{
+    margin-top: 5px;
+    margin-left: 50px;
+    padding: 5px 10px 5px 10px;
+    color: white;
     background-color:#2DFF57;
 }
 

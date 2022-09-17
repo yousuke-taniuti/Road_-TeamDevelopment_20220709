@@ -51,6 +51,7 @@
             <th>出身</th>
             <th>所属部署</th>
             <th>入社日</th>
+            <th th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">編集ボタン</th>
             <th th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">給料ボタン</th>
           </tr>
           <tr th:each="data : ${result1}">
@@ -62,8 +63,10 @@
             <td th:text="${data.prefecture_name}"/>
             <td th:text="${data.department_name}"/>
             <td th:text="${#dates.format(data.entry_date,'yyyy-MM-dd')}">
+            <td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
+			<a th:href="@{/edit}"><input type="button" class="footer3" value="編集画面" ></input></a>
 			<td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
-			<a th:href="@{/salary}"><input type="button" class="footer3" value="給与画面" ></input></a>
+			<a th:href="@{/salary}"><input type="button" class="footer4" value="給与画面" ></input></a>
           </tr>
           </table> 
           </div> 

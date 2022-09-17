@@ -92,7 +92,7 @@ public class SearchController {
 		model.addAttribute("user_auth", role_code);
 		
 		
-		model.addAttribute("userrole", "S");
+		model.addAttribute("userrole", "CEO");
 		
 		return "search";
 		
