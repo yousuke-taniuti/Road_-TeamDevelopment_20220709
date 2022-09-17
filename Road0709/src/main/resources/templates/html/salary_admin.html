@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+<meta charset="UTF-8">
+<title>給与画面</title>
+<link rel="stylesheet" th:href="@{/css/salary.css}"></link>
+</head>
+<body>
+	<div class="wrapper">
+		<div class="ground">
+			<div class="header">給与画面</div>
+			<div th:object="${salaryDate}">
+				<div class="center clearfix">
+					<table class="table table-striped">
+						<tr>
+							<th>ID</th>
+							<th>給料ID</th>
+							<th>名前</th>
+							<th>給与</th>
+							<th>税</th>
+							<th>保険料</th>
+							<th>交通費</th>
+							<th>総支給額</th>
+							<th>交付日</th>
+							<th>オプション</th>
+						</tr>
+						<tr th:each="salary : ${salaryList}" th:object="${salaryList}">
+							<td th:text="${salary.user_id}"></td>
+							<td th:text="${salary.salary_number}"></td>
+							<td th:text="${salary.name}"></td>
+							<td th:text="${salary.base_salary}"></td>
+							<td th:text="${salary.tax}"></td>
+							<td th:text="${salary.premium}"></td>
+							<td th:text="${salary.carfare}"></td>
+							<td th:text="${salary.gross_payment}"></td>
+							<td th:text="${salary.salary_date}"></td>
+							<td><a
+								th:href="@{/salary/{salary_number}(salary_number=${salary.salary_number})}"
+								class="button1" aria-disabled="true">編集</a></td>
+
+							<!--  <a th:href="@{/user/{id}/edit(id=*{id})}" class="btn btn-primary disabled" aria-disabled="true">　編集　</a> -->
+
+							<!-- <form action="/salary_s" method="get">
+									<input  type="submit" name="edit" class="button1" value="編集"> 
+										
+									<input type="hidden" name="salary_number" th:value="${salary.salary_number}">
+								</form> -->
+						</tr>
+					</table>
+
+
+
+
+
+					<form action="/salary_csv1" method="get">
+						<input type="submit" class="botton2" value="csv">
+					</form>
+
+
+					<div class="button clearfix">
+
+
+						<form action="/serch&list" method="get">
+							<button type="submit" class="footer" th:href="@{/serch&list}">一覧に戻る</button>
+						</form>
+						
+						<!--c  -->
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

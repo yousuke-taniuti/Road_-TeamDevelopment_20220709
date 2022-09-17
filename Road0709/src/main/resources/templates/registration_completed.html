@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>社員登録完了</title> 
+<link rel="stylesheet" href="./static/registration_completed.css"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">社員登録完了</div>
+            <div class="center">
+                <div class="main clearfix">
+                <ul>
+                    <div class="content clearfix">
+                        <div class="content-left">
+                            <label>ユーザーID</label><br>
+                            <input class="id" size="8" tth:text="${user_id}"><br>
+
+                            <label>名前</label><br>
+                            <input class="name" size="20" th:text="${name}"><br>
+
+                            <label>カタカナ</label><br>
+                            <input class="kana" size="50" th:text="${name_kana}"><br>
+
+                            <label>パスワード</label><br>
+                            <input class="pass" size="100" th:text="${password}"><br>
+
+                            <label>メールアドレス</label><br>
+                            <input class="upn" size="50" th:text="${upn}"><br>
+                        </div>
+
+                        <div class="content-right">
+                            <label>生年月日</label><br>
+                            <input class="birthday" th:text="${#dates.format(birthday,'yyyy-MM-dd')}"><br>
+
+                            <label>性別</label><br>
+                            <input class="gender" th:text="${gender}"><br>
+
+                            <label>出身地</label><br>
+                            <input class="prefecture_code" th:text="${prefecture_code}"><br>
+                                
+                            <label>役職</label><br>
+                            <input class="position_code" th:text="${position_code}"><br>
+
+                            <label>部署</label><br>
+                            <input class="department_code" th:text="${department_code}"><br>
+                                
+                            <label>入社日</label><br>
+                            <input class="entry_date" th:text="${entry_date}"><br>
+                        </div>
+                    </div> 
+                    <div class="under">登録完了しました。</div>
+                     <button type="submit" class="footer" onclick="location.href='/search＆list'">>トップに戻る</button>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
