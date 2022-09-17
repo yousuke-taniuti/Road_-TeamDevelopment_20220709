@@ -8,20 +8,21 @@ import org.springframework.stereotype.Service;
 import com.employee.edit.editRequest.EditRequest;
 import com.employee.edit.entity.Edit;
 import com.employee.edit.repository.EditRepository;
+
 @Service
 public class EditService {
- 
+
 	@Autowired
 	private EditRepository editRepository;
-	
-	  public List<Edit> searchAll() {
-		    return editRepository.findAll();
-		  }
 
+	public List<Edit> searchAll() {
+		return editRepository.findAll();
+	}
 
 	public Edit findById(String user_id) {
 		return editRepository.findById(user_id).get();
 	}
+
 	/**
 	 * ユーザー情報 更新s
 	 * 
@@ -29,7 +30,7 @@ public class EditService {
 	 * @return
 	 */
 	public void update(EditRequest editRequest) {
-		
+
 		Edit edit = findById(editRequest.getUser_id());
 		edit.setName(editRequest.getName());
 		edit.setName_kana(editRequest.getName_kana());
@@ -45,9 +46,9 @@ public class EditService {
 		editRepository.save(edit);
 
 	}
-	
-	  public void delete(String user_id) {
-		    Edit edit = findById(user_id);
-		    editRepository.delete(edit);
-		  }
+
+	public void delete(String user_id) {
+		Edit edit = findById(user_id);
+		editRepository.delete(edit);
+	}
 }
