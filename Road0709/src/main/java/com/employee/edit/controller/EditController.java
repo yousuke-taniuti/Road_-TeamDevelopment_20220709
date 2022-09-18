@@ -11,7 +11,6 @@ import org.springframework.validation.ObjectError;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -141,10 +140,10 @@ public class EditController {
 		return department_name;
 	}
 
-	@GetMapping("/{user_id}/delete")
-	public String delete(@PathVariable String user_id, Model model) {
+	@GetMapping("/delete")
+	public String delete(Model model) {
 		// ユーザー情報の削除
-		editService.delete(user_id);
+	
 		return "delete";
 	}
 

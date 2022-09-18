@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
-<head> 
-<meta charset="utf-8"> 
-<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
-<title>削除完了画面</title> 
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>削除完了画面</title>
 <link th:href="@{/css/editcomplete.css}" rel="stylesheet"></link>
 </head>
-<body> 
-    <div class="wrapper"> 
-        <div class="ground">
-        <div class="header">社員編集完了画面</div>
-            <div class="center">
-            <form th:action="@{/edit/update/s&l}" th:object="${UpdateRequest}">
-                    <div class="word">
-                     <h2 >編集が完了しました。</h2>
-                    </div>
-                    
-                    <div class="back"> 
-                    <input th:href="@{/search}" type="submit" value="一覧に戻る"
-      class="next">
-     </div>
-                    
-     
-                
-            </form>
-            </div>
-        </div>
-    </div>
+<body>
+	<div class="wrapper">
+		<div class="ground">
+			<div class="header">削除完了画面</div>
+			<div class="center">
+				<div class="word">
+					<h2>削除完了しました。</h2>
+				</div>
+
+				<div class="back">
+					<a th:href="@{/searchList}" type="submit" class="next">一覧に戻る</a>
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
 </body>
 </html>

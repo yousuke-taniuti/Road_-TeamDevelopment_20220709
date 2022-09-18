@@ -124,13 +124,17 @@
 						</div>
 						<div>
 							<input th:href="@{/editcomplete}" type="submit" value="編集"
-								class="next"> <input
-								th:href="@{/{user_id}/delete(user_id=${user_id})}" type="submit"
-								class="back" value="削除">
+								class="next"> 
+								
 						</div>
 					</div>
 				</div>
 			</form>
+			
+			<a th:href="@{/delete}" type="submit"
+								class="back">削除</a>
+								
+			
 		</div>
 	</div>
 
