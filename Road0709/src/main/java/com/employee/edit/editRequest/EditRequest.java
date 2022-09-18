@@ -2,6 +2,7 @@ package com.employee.edit.editRequest;
 
 import java.util.Date;
 
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -30,6 +31,7 @@ public class EditRequest {
 	@NotEmpty(message = "passwordを入力してください")
 	private String password;
 
+	@Email(message = "正しい形式で入力してください")
 	@NotEmpty(message = "メールアドレスを入力してください")
 	private String upn;
 

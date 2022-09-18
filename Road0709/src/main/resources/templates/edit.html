@@ -35,12 +35,12 @@
 
 				<div class="center">
 					<div class="left">
-						<div class="id">
+						  <div class="id">
 							<label for="user_id">ID<span class="text-danger"></span></label><br>
-							<input type="text" name="user_id" th:field="*{user_id}" size="20">
+							<input  name="user_id" th:field="*{user_id}" size="20" readonly>
 							<span th:if="${#fields.hasErrors('user_id')}"
 								th:errors="*{user_id}" style="color: red"></span>
-
+	
 						</div>
 
 						<div class="name">

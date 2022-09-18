@@ -46,7 +46,7 @@ import com.search.repository.RoleRepository;
 	@GetMapping(value = "/serch&list")
 	public String displayAdd(Model model) {
     
-    return "serch&list";
+    return "search";
   }
   
 	@GetMapping(value = "/new_regist")
@@ -60,7 +60,7 @@ import com.search.repository.RoleRepository;
 		List<Role> role = rolerepository.findAll();
 	    model.addAttribute("role", role);
   
-	    return "new_regist";
+	    return "html/new_regist";
 	}
  
 	@RequestMapping("/employee_registration")
@@ -81,7 +81,7 @@ import com.search.repository.RoleRepository;
 	      model.addAttribute("department", department);
 	      List<Role> role = rolerepository.findAll();
 	      model.addAttribute("role", role);
-	      return "new_regist";
+	      return "html/new_regist";
 	    }
 	  
 	  Date date = new Date();

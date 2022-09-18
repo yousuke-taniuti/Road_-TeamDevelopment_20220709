@@ -49,7 +49,7 @@ public class UserController {
   @GetMapping(value = "/")
   public String displayAdd(Model model) {
     
-    return "serch&list";
+    return "search";
   }
   
   @RequestMapping(value = "/register")

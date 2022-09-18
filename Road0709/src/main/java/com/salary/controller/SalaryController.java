@@ -28,7 +28,7 @@ public class SalaryController {
 //		user.getUser_id();
 //		List<Salary> salaryList = salaryService.searchAll();
 //		model.addAttribute("salaryList", salaryList);
-//		return "html/salary_completion";
+//		return "salary";
 //	}
 
 	@GetMapping("/salary")
