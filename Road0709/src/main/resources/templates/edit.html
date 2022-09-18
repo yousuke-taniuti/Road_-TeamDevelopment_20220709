@@ -28,19 +28,18 @@
      				<input type="file" name="file"/>
       				<button type="submit" formenctype="multipart/form-data" formmethod="post" formaction="/upload">MultipartFile送信</button>
  				</form>  -->
-
 			<form th:action="@{/edit/update}" th:object="${editRequest}"
 				th:method="post">
 
 
 				<div class="center">
 					<div class="left">
-						  <div class="id">
+						<div class="id">
 							<label for="user_id">ID<span class="text-danger"></span></label><br>
-							<input  name="user_id" th:field="*{user_id}" size="20" readonly>
+							<input type="text" name="user_id" th:field="*{user_id}" size="20" readonly>
 							<span th:if="${#fields.hasErrors('user_id')}"
 								th:errors="*{user_id}" style="color: red"></span>
-	
+
 						</div>
 
 						<div class="name">
@@ -90,7 +89,7 @@
 								
 							 <div class="from">
 								<label for="prefecture_code">出身都道府県</label><br> <select
-									name="prefecture_code" th:field="*{prefecture_code}">
+									name="prefecture_code" class="prefecture" th:field="*{prefecture_code}">
 									<option value="">=選択肢=</option>
 									<option th:each="item : ${prefecture}"
 										th:value="${item.prefecture_code}"
@@ -102,7 +101,7 @@
 							
 							 <div class="busyo">
 								<label for="department_code">部署コード</label><br> <select
-									name="department_code" th:field="*{department_code}">
+									name="department_code" class="department" th:field="*{department_code}">
 									<option value="">=選択肢=</option>
 									<option th:each="item : ${department}"
 										th:value="${item.department_code}"

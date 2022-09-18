@@ -1,10 +1,14 @@
 .wrapper{
     margin: 0 auto;
-    width: 1000px
+    width: 100%
 }
 
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+
 .ground{
-    background-color: #D9E5FF;
     height: 600px;
 }
 
@@ -13,27 +17,19 @@
     float: auto;
     margin-top: 40px;
     height: 70px;
-    margin-left: 300px;
+    margin-left: 500px;
     padding-top: 20px;
 }
 
 .center{
-    width: 800px;
     height: 480px;
     margin-left: 100px;
     vertical-align: middle;
-    background-color: white;
-}
-
-.main{
-    padding-top: 200px;
-    margin-left: 100px;
-    font-size:20px;
 }
 
 .word {
 	font-size: 30px;
-	margin-left:200px;
+	margin-left:400px;
 	padding-top:130px;
 
 }
@@ -45,14 +41,10 @@
 
 
 .next{
-	   font-size:20px;
-    margin-left: 200px;
+	font-size:20px;
+    margin-left: 400px;
     padding: 5px 40px 5px 40px;
     color: white;
-    background-color: #2DFF57;
+    background-color: #2962ce;
 	
 }
-
-
-
-

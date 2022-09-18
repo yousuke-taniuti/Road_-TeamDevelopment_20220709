@@ -1,8 +1,14 @@
 .wrapper{
     margin: 0 auto;
-    width: 1000px
+    width: 100%
+    
 }
 
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+  
 .ground{
     background-color: #CCFFFF;
     height: 600px;

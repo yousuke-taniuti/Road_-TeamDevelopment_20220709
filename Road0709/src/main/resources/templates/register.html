@@ -70,7 +70,7 @@
 
                         <div class="from">
                             <label for="prefecture_code">出身都道府県</label><br>
-                            <select name="prefecture_code" th:value="*{prefecture_code}">
+                            <select name="prefecture_code" class="prefecture" th:value="*{prefecture_code}">
                             <option value="">=選択肢=</option>
                             <option th:each="item : ${prefecture}" th:value="${item.prefecture_code}" th:text="${item.prefecture_name}" ></option></select>
                            <span th:if="${#fields.hasErrors('prefecture_code')}" th:errors="*{prefecture_code}" style = color:red></span>
@@ -78,9 +78,9 @@
                         </div>
                         <div  class="busyo">
                             <label for="department_code">部署コード</label><br>
-                            <select name="department_code" th:value="*{department_code}">
+                            <select name="department_code" class="department" th:value="*{department_code}">
                             <option value="">=選択肢=</option>                        
-                            <option th:each="item : ${department}" th:value="${item.department_code}" th:text="${item.department_name}" ></option></select>
+                            <option th:each="item : ${department}"  th:value="${item.department_code}" th:text="${item.department_name}" ></option></select>
                           	<span th:if="${#fields.hasErrors('department_code')}" th:errors="*{department_code}" style = color:red></span>
                             
                         </div>

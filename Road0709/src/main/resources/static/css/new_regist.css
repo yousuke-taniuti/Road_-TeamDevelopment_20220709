@@ -1,10 +1,14 @@
 .wrapper{
     margin: 0 auto;
-    width: 1000px
+    width: 100%
 }
 
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+
 .ground{
-    background-color: #CCFFFF;
     height: 600px;
 }
 
@@ -20,97 +24,132 @@
 }
 
 .center{
-    width: 900px;
     height: 380px;
-    margin-left: 50px;
-    vertical-align: middle;
-    background-color: white;
 }
 
 .left{
-    width: 450px;
-    height: 450px;
+    width: 500px;
+    height: 420px;
+    margin-top: 20px;
+    margin-left: 330px;
     float: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .right{
-    width: 350px;
     height: 450px;
-    float: right;
+    margin-top: 20px;
     float: left;
 }
 
 .right_inner{
+	margin-left: 20px;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
-.id{
+#user_id{
+	width:250px;
     height:30px;
-    margin-top: 30px;
 }
 
 .name{
+    margin-top: 20px;
+}
+
+#name{
+	width:250px;
     height:30px;
-    margin-top: 30px;
 }
 
 .kana{
+   	margin-top: 20px; 
+}
+
+#name_kana{
+	width:250px;
     height:30px;
-    margin-top: 30px;
 }
 
 .password{
+    margin-top: 20px;
+}
+
+#password{
+	width:250px;
     height:30px;
-    margin-top: 30px;
 }
 
 .upn{
+    margin-top: 20px;
+}
+
+#upn{
+	width:250px;
     height:30px;
-    margin-top: 30px;
 }
 
 .date{
+    height:25px;
+    margin-bottom: 60px;
+}
+
+#birthday{
+	width:150px;
     height:30px;
-    margin-top: 30px;
+    text-align: center;
 }
 
 .gender{
-    height:30px;
-    margin-top: 30px;
+    height:25px;
+    margin-bottom: 50px;
 }
 
 .from{
-    height:30px;
-    margin-top: 30px;
+    height:25px;
+    margin-bottom: 50px;
+}
+
+.prefecture{
+  	width: 150px;
+  	height:30px;
+    text-align: center;
+}
+
+.yakusyoku{
+    height:25px;
+    margin-bottom: 50px;
 }
 
 .role{
-  
-    margin-top: 30px;
+  	width: 150px;
+  	height:30px;
+    text-align: center;
+}
+
+.busyo{
+  	height:25px;
+    margin-bottom: 50px;
 }
 
 .department{
-  
-    margin-top: 30px;
+	width: 150px;
+  	height:30px;
+    text-align: center;
 }
 
 .next{
-
+	padding: 5px 30px 5px 30px;
     font-size:15px;
-    background-color: #FFFF55;
-    margin-top: 60px;
-    margin-left: 110px;
+    background-color: rgb(0, 150, 255);
+    margin-top: 20px;
 }
 
 .back{
-
+	padding: 5px 30px 5px 30px;
     font-size:15px;
-    background-color: #99FF00;
-    margin-top: 60px;
+    background-color: rgb(115, 253, 255);
+    margin-top: 20px;
     margin-left: 30px;
 }

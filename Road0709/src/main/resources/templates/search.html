@@ -67,7 +67,7 @@
             <td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
 
             <form action="/edit" method="get">
-				<input  type="submit" name="edit" class="button1" value="編集画面"> 
+				<input  type="submit" name="edit" class="footer3" value="編集画面"> 
 				<input type="hidden" name="user_id" th:value="${data.userId}">
 			</form>
 			

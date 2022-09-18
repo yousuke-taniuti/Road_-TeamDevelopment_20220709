@@ -20,7 +20,7 @@
                 <div class="left">
                     <div class="id">
                         <label for="user_id">ID<span class="text-danger"></span></label><br>
-                        <input type="text" name="user_id"  th:field="*{user_id}"  size="20">
+                        <input type="text" name="user_id" th:field="*{user_id}"  size="20">
                         <span th:if="${#fields.hasErrors('user_id')}" th:errors="*{user_id}" style = color:red></span>
                      
                     </div>
@@ -54,36 +54,36 @@
                     <div class="right_inner">
                        <div class="date">
                             <label for="birthday">生年月日</label><br>
-                            <input type="date" name="birthday" th:field="*{birthday}" size="20">
+                            <input type="date" name="birthday" class="date" th:field="*{birthday}">
                             <span th:if="${#fields.hasErrors('birthday')}" th:errors="*{birthday}" style = color:red></span>
                         </div>
 
                         <div class="gender">
                             <label for="gender">性別</label><br>
-                            <input type="radio" name="gender" value="1" th:field="*{gender}" > 男性
-                            <input type="radio" name="gender" value="2" th:field="*{gender}"> 女性 
+                            <input type="radio" name="gender" class="gender" value="1" th:field="*{gender}" > 男性
+                            <input type="radio" name="gender" class="gender"  value="2" th:field="*{gender}"> 女性 
                             <span th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}" style = color:red></span>                    
                         </div>
 
                         <div class="from">
                             <label for="prefecture_code">出身都道府県</label><br>
-                            <select name="prefecture_code" th:value="*{prefecture_code}">
+                            <select name="prefecture_code" class="prefecture" th:value="*{prefecture_code}">
                                 <option value="">=選択肢=</option>
-                                <option th:each="item : ${prefecture}" th:value="${item.prefecture_code}" th:text="${item.prefecture_name}" ></option></select>
+                                <option th:each="item : ${prefecture}" class="from"  th:value="${item.prefecture_code}" th:text="${item.prefecture_name}" ></option></select>
                                 <span th:if="${#fields.hasErrors('prefecture_code')}" th:errors="*{prefecture_code}" style = color:red></span>  
                         </div>
-                        <div  class="role">
+                        <div  class="yakusyoku">
                             <label for="role_code">役職</label><br>
-                            <select name="role_code" th:value="*{role_code}">
+                            <select name="role_code" class="role" th:value="*{role_code}">
                                 <option value="">=選択肢=</option>                        
-                                <option th:each="item : ${role}" th:value="${item.role_code}" th:text="${item.role_name}" ></option></select>
+                                <option th:each="item : ${role}" class="role"  th:value="${item.role_code}" th:text="${item.role_name}" ></option></select>
                                 <span th:if="${#fields.hasErrors('role_code')}" th:errors="*{role_code}" style = color:red></span>
                         </div>
-                        <div  class="department">
+                        <div  class="busyo">
                             <label for="department_code">部署</label><br>
-                            <select name="department_code" th:value="*{department_code}">
+                            <select name="department_code" class="department" th:value="*{department_code}">
                                 <option value="">=選択肢=</option>                        
-                                <option th:each="item : ${department}" th:value="${item.department_code}" th:text="${item.department_name}" ></option></select>
+                                <option th:each="item : ${department}" class="department"  th:value="${item.department_code}" th:text="${item.department_name}" ></option></select>
                             	<span th:if="${#fields.hasErrors('department_code')}" th:errors="*{department_code}" style = color:red></span>
                         </div>
                     </div> 

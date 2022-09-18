@@ -1,10 +1,14 @@
 .wrapper{
     margin: 0 auto;
-    width: 1000px
+    width: 100%
 }
 
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+
 .ground{
-    background-color: #D9E5FF;
     height: 600px;
 }
 
@@ -13,7 +17,7 @@
     float: auto;
     margin-top: 40px;
     height: 70px;
-    margin-left: 350px;
+    margin-left: 550px;
     padding-top: 20px;
 }
 
@@ -33,7 +37,8 @@
 
 .content-left {
  float: left;
-    width: 400px;
+ margin-left: 330px;
+ width: 420px;
 }
 
 .id{
@@ -63,7 +68,7 @@
 
 .content-right {
  float: left;
-    width: 300px;
+    width: 500px;
 }
 
 .birthday{
@@ -98,26 +103,17 @@
 }
 
 .under{
-    font-size:15px;
+    font-size:25px;
     float: auto;
     margin-top: 10px;
     height: 20px;
-    margin-left: 240px;
+    margin-left: 500px;
 }
 
-.footer1{
+.footer{
     font-size:20px;
-    margin-top: 20px;
-    margin-left: 80px;
-    padding: 5px 40px 5px 40px;
-    color: white;
-    background-color: #2DFF57;
-}
-
-.footer2{
-    font-size:20px;
-    margin-top: 20px;
-    margin-left: 80px;
+    margin-top: 40px;
+    margin-left: 500px;
     padding: 5px 40px 5px 40px;
     color: white;
     background-color: gray;
