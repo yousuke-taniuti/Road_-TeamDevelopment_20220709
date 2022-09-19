@@ -4,8 +4,11 @@
     <title>検索＆一覧</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
   </head>
-	<link rel="stylesheet" href="/css/search&list.css"></head>
+ <link rel="stylesheet" href="/css/search&list.css"></head>
   <body>
+  <form th:action="@{/logout}" method="post">
+    <button class = "logout">ログアウト</button>
+  </form>
   <div class="wrapper"> 
     <div class="ground">
       <h3 class="header">検索＆一覧画面</h3>
@@ -67,12 +70,12 @@
             <td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
 
             <form action="/edit" method="get">
-				<input  type="submit" name="edit" class="footer3" value="編集画面"> 
-				<input type="hidden" name="user_id" th:value="${data.userId}">
-			</form>
-			
-			<td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
-			<a th:href="@{/salary}"><input type="button" class="footer4" value="給与画面" ></input></a>
+    <input  type="submit" name="edit" class="footer3" value="編集画面"> 
+    <input type="hidden" name="user_id" th:value="${data.userId}">
+   </form>
+   
+   <td th:if="${userrole eq 'CEO' || userrole eq 'SMD' || userrole eq 'MD' || userrole eq 'DD' || userrole eq 'MD'}">
+   <a th:href="@{/salary}"><input type="button" class="footer4" value="給与画面" ></input></a>
           </tr>
           </table> 
           </div> 

@@ -1,8 +1,13 @@
-
 .wrapper{
     margin: 0 auto;
     width: 100%
     
+}
+
+.logout{
+ margin-left: 715px;
+ background-color: #000000;
+ color: white;
 }
 
 body {
@@ -112,7 +117,7 @@ body {
 }
 
 .footer3{
-	font-size:5px;
+ font-size:5px;
     float: center;
     margin-left: 30px;
     padding: 5px 10px 5px 10px;
@@ -121,7 +126,7 @@ body {
 }
 
 .footer4{
-	font-size:5px;
+ font-size:5px;
     float: center;
     margin-left: 30px;
     padding: 5px 10px 5px 10px;
