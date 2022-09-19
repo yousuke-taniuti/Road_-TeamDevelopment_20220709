@@ -10,102 +10,109 @@ body {
   }
   
 .ground{
-    background-color: #CCFFFF;
     height: 600px;
 }
 
 .header{
     font-size:50px;
-    float: auto;
     margin-top: 40px;
     padding-top: 30px;
     height: 100px;
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .center{
-    width: 700px;
     height: 380px;
-    margin-left: 150px;
     vertical-align: middle;
-    background-color: white;
 }
 
 .left{
-    width: 350px;
+    width: 500px;
     height: 450px;
+    margin-left: 330px;
     float: left;
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .right{
-    width: 350px;
+    width: 450px;
     height: 450px;
     float: left;
-    margin-top: 50px;
 }
 
 .right_inner{
     display: flex;
     flex-direction: column;
-    align-items: center;
 }
 
 .name{
-    height:30px;
     margin-top: 50px;
 }
 
-.kyuyo{
+#name{
+	width:250px;
     height:30px;
-    margin-top: 30px;
-}
-
-.zei{
-    height:30px;
-    margin-top: 30px;
-}
-
-.hoken{
-    height:30px;
-    margin-top: 30px;
-}
-
-.koutu{
-    height:30px;
-    margin-top: 50px;
-}
-
-.sougaku{
-    height:30px;
-    margin-top: 30px;
-}
-
-.kouhubi{
-    height:30px;
-    margin-top: 30px;
-}
-
-.next{
-    font-size:15px;
-    background-color: #FFFF55;
-    margin-top: 60px;
-    margin-left: 110px;
-}
-
-.back{
-    font-size:15px;
-    background-color: #99FF00;
-    margin-top: 60px;
-    margin-left: 30px;
 }
 
 .base_salary{
-	margin-top:20px;
-	
-	
+    margin-top: 30px;
+}
+
+#kyuyo{
+    width:250px;
+    height:30px;
+}
+
+.tax{
+    margin-top: 30px;
+}
+
+#zei{
+    width:250px;
+    height:30px;
+}
+
+.premium{
+    margin-top: 50px;
+}
+
+#hoken{
+    width:250px;
+    height:30px;
+}
+
+.carfare{
+    margin-top: 30px;
+}
+
+#koutu{
+    width:250px;
+    height:30px;
+}
+
+.gross_payment{
+    margin-top: 30px;
+}
+
+#sougaku{
+    width:250px;
+    height:30px;
+}
+
+.next{
+    padding: 5px 30px 5px 30px;
+    font-size:15px;
+    background-color: #4976f2;
+    margin-top: 40px;
+}
+
+.back{
+    padding: 5px 30px 5px 30px;
+    font-size:15px;
+    background-color: #d3d3e6;
+    margin-top: 40px;
+    margin-left: 30px;
 }

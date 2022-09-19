@@ -6,12 +6,15 @@
   </head>
  <link rel="stylesheet" href="/css/search&list.css"></head>
   <body>
-  <form th:action="@{/logout}" method="post">
-    <button class = "logout">ログアウト</button>
-  </form>
+  
   <div class="wrapper"> 
     <div class="ground">
-      <h3 class="header">検索＆一覧画面</h3>
+    <form th:action="@{/logout}" method="post">
+    		<button class = "logout">ログアウト</button>
+  		</form>
+      <h3 class="header">検索＆一覧画面
+      	
+  	  </h3>	
         <div class="center">
         <form th:method="post" name="form1" th:action="@{/searchList}">
           <div class="main">

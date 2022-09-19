@@ -21,8 +21,15 @@ body {
 .center{
     width: 400px;
     height: 250px;
-    margin-left: 500px;
+    margin-left: auto;
+    margin-right: auto;
     vertical-align: middle;
+}
+
+.error{
+	width: 385px;
+    margin-left: 550px;
+    color: rgb(255, 38, 0);
 }
 
 .main{
@@ -52,7 +59,7 @@ body {
 .under{
     font-size:20px;
     margin-top: 20px;
-    margin-left: 560px;
+    margin-left: 575px;
     float: auto;
     color:  #00AA00;
 }

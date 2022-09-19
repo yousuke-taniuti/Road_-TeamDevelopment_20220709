@@ -4,12 +4,6 @@
     
 }
 
-.logout{
- margin-left: 715px;
- background-color: #000000;
- color: white;
-}
-
 body {
     background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
     background-size: cover;
@@ -23,7 +17,14 @@ body {
     font-size:50px;
     height: 40px;
     margin-left: 530px;
-    padding-top: 30px;
+}
+
+.logout{
+	padding: 3px 15px 3px 15px;
+	margin-top: 10px;
+	margin-left:1300px;
+ 	background-color: rgb(0, 83, 146);
+ 	color: white;
 }
 
 .main{
