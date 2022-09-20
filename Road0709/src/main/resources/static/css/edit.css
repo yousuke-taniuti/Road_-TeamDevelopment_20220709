@@ -42,13 +42,13 @@ body {
 }
 
 .right_inner{
-	margin-left: 20px;
+ margin-left: 20px;
     display: flex;
     flex-direction: column;
 }
 
 #user_id{
-	width:250px;
+ width:250px;
     height:25px;
 }
 
@@ -57,16 +57,16 @@ body {
 }
 
 #name{
-	width:250px;
+ width:250px;
     height:25px;
 }
 
 .kana{
-   	margin-top: 20px; 
+    margin-top: 20px; 
 }
 
 #name_kana{
-	width:250px;
+ width:250px;
     height:25px;
 }
 
@@ -75,7 +75,7 @@ body {
 }
 
 #password{
-	width:250px;
+ width:250px;
     height:25px;
 }
 
@@ -84,7 +84,7 @@ body {
 }
 
 #upn{
-	width:250px;
+ width:250px;
     height:25px;
 }
 
@@ -93,7 +93,7 @@ body {
 }
 
 #birthday{
-	width:150px;
+ width:150px;
     height:25px;
     text-align: center;
 }
@@ -109,8 +109,8 @@ body {
 }
 
 .prefecture{
-  	width: 150px;
-  	height:25px;
+   width: 150px;
+   height:25px;
     text-align: center;
 }
 
@@ -120,19 +120,19 @@ body {
 }
 
 .role{
-  	width: 150px;
-  	height:25px;
+   width: 150px;
+   height:25px;
     text-align: center;
 }
 
 .busyo{
-  	height:25px;
+   height:25px;
     margin-bottom: 50px;
 }
 
 .department{
-	width: 150px;
-  	height:25px;
+ width: 150px;
+   height:25px;
     text-align: center;
 }
 
@@ -141,22 +141,21 @@ body {
 }
 
 #entry_date{
-	width:150px;
+ width:150px;
     height:25px;
     text-align: center;
 }
 
 .next{
-	padding: 5px 30px 5px 30px;
+ padding: 5px 30px 5px 30px;
     font-size:15px;
     background-color: #FFFF55;
     margin-top: 30px;
 }
 
-.back{
-	padding: 5px 30px 5px 30px;
+.footer{
+ padding: 5px 30px 5px 30px;
     font-size:15px;
     background-color: #99FF00;
-    margin-top: 30px;
-    margin-left: 30px;
+    margin-top: 24px;
 }

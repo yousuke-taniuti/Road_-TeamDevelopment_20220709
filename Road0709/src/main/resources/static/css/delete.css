@@ -1,37 +1,50 @@
-#wrapper {
+.wrapper{
     margin: 0 auto;
-    width: 1000px
+    width: 100%
 }
+
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+
 .ground {
-    background-color: #CCFFFF;
-    border-top: 8px solid;
     height: 600px;
 }
-.center{
-    width: 500px;
-    height: 200px;
-    margin-left: 250px;
-    vertical-align: middle;
-    background-color: white;
-    border-radius: 20px;
-}
 
-
-.deletion_completed {
-    margin-top: 100px;
-    text-align: center;
-    font-size: 45px;
-}
-.completed {
-    text-align: center;
-    padding-top: 40px;
-}
-.footer {
+.header{
+    font-size:50px;
+    float: auto;
     margin-top: 40px;
-    background: rgb(14, 233, 68); 
-    color: aliceblue;
-    padding-left: 30px;
-    padding-right: 30px;
-    border-radius: 20px;
-    border-color: white;
+    height: 70px;
+    margin-left: 550px;
+    padding-top: 20px;
+}
+
+.center{
+    height: 480px;
+    margin-left: 100px;
+    vertical-align: middle;
+}
+
+.word {
+ font-size: 30px;
+ margin-left:430px;
+ padding-top:130px;
+
+}
+
+.back {
+ padding-top: 50px; 
+ margin-left:100px;
+}
+
+
+.next{
+ font-size:20px;
+    margin-left: 420px;
+    padding: 5px 40px 5px 40px;
+    color: white;
+    background-color: #2962ce;
+ 
 }

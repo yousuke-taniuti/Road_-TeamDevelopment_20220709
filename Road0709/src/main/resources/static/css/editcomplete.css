@@ -28,23 +28,23 @@ body {
 }
 
 .word {
-	font-size: 30px;
-	margin-left:400px;
-	padding-top:130px;
+ font-size: 30px;
+ margin-left:390px;
+ padding-top:130px;
 
 }
 
 .back {
-	padding-top: 50px; 
-	margin-left:100px;
+ padding-top: 50px; 
+ margin-left:100px;
 }
 
 
 .next{
-	font-size:20px;
-    margin-left: 400px;
+ font-size:20px;
+    margin-left: 420px;
     padding: 5px 40px 5px 40px;
     color: white;
     background-color: #2962ce;
-	
+ 
 }
