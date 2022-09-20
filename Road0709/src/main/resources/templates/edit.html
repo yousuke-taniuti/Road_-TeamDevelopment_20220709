@@ -130,7 +130,11 @@
 					</div>
 				</div>
 			</form>
-			
+			<form action="/delete" method="get">
+			    <input  type="submit" name="edit" class="footer3" value="削除"> 
+			    <input type="hidden" name="user_id" th:value="${editRequest.user_id}">
+			</form>
+   
 			<a th:href="@{/delete}" type="submit"
 								class="back">削除</a>
 								

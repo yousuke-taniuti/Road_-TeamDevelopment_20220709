@@ -139,12 +139,4 @@ public class EditController {
 		}
 		return department_name;
 	}
-
-	@GetMapping("/delete")
-	public String delete(Model model) {
-		// ユーザー情報の削除
-	
-		return "delete";
-	}
-
 }

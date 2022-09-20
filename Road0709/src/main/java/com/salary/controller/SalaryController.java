@@ -37,7 +37,7 @@ public class SalaryController {
 		List<Salary> salaryListAll = new ArrayList<Salary>();
 		salaryListAll = salaryService.searchAll();
 		for (int i = 0; salaryListAll.size() > i; i++) {
-			if (salaryListAll.get(i).getUser_id() == 1) { // user.getIdが１のところに来る
+			if (salaryListAll.get(i).getUser_id() == 1234) { // user.getIdが１のところに来る
 				salaryList.add(salaryListAll.get(i));
 			}
 		}
