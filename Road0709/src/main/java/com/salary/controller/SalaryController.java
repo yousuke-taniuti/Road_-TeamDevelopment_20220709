@@ -77,11 +77,11 @@ public class SalaryController {
 	
 
 
-//	検索＆一覧
-	@GetMapping("/serch&lists")
-	public String getSerch() {
-		return "serch";
-	}
+////	検索＆一覧
+//	@GetMapping("/searchList")
+//	public String getSerch() {
+//		return "search";
+//	}
 
 }
 

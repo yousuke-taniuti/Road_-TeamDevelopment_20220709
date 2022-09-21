@@ -25,7 +25,7 @@ public class EditCompletedController {
 	public String index(Model model) {
 		EditCompletedRequest editCompletedRequest = new EditCompletedRequest();
 		model.addAttribute("editCompletedRequest", editCompletedRequest);
-		return "salary";
+		return "salary_admin";
 	}
 	
 	
