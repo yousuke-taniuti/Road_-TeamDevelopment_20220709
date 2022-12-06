@@ -1,0 +1,146 @@
+.wrapper{
+    margin: 0 auto;
+    width: 100%
+    
+}
+
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+
+.ground{
+    height: 600px;
+}
+
+.header{
+    font-size:50px;
+    height: 40px;
+    margin-left: 530px;
+}
+
+.logout{
+	padding: 3px 15px 3px 15px;
+	margin-top: 10px;
+	margin-left:1300px;
+ 	background-color: rgb(0, 83, 146);
+ 	color: white;
+}
+
+.main{
+    border: 1px solid #1B73BA;
+    width: 950px;
+    height: 130px;
+    font-size:20px;
+    padding-top: 10px;
+    margin-left: 230px;
+    margin-bottom: 10px;
+}
+
+.content-left {
+    float: left;
+    margin-left: 20px;
+    width: 350px;
+}
+
+.form-control1{
+    border: 1px solid #1B73BA;
+    margin-top: 10px;
+    width:200px;
+    height:25px;
+}
+   
+.form-control2{
+    border: 1px solid #1B73BA;
+    margin-top: 10px;
+    width:200px;
+    height:25px;
+}
+   
+.form-select-sm3{
+    border: 1px solid #1B73BA;
+    margin-top: 10px;
+    padding: 0px 30px 0px 30px;
+    width:200px;
+    height:25px;
+}
+
+.content {
+    float: left;
+    margin-left: 30px;
+    width: 250px;
+}
+
+.startDate{
+    width:200px;
+    height:20px;
+}
+   
+.endDate{
+    width:200px;
+    height:20px;
+}
+
+.content-right {
+    float: left;
+    width: 100px;
+}
+
+.word{
+    margin-left: 130px;
+}
+
+.footer{
+    margin-left: 20px;
+    font-size:20px;
+    margin-top: 5px;
+    padding: 0px 30px 0px 30px;
+    background-color:rgb(251, 74, 61);
+    color: white;
+}
+
+.footer1{
+    margin-left: 20px;
+    font-size:20px;
+    margin-top: 5px;
+    padding: 0px 30px 0px 30px;
+    color: white;
+    background-color: rgb(24, 125, 255);
+}
+
+.footer2{
+    margin-left: 20px;
+    font-size:20px;
+    margin-top: 5px;
+    padding: 0px 30px 0px 30px;
+    color: white;
+    background-color: rgb(96, 95, 128);
+}
+
+.footer3{
+ font-size:5px;
+    float: center;
+    margin-left: 30px;
+    padding: 5px 10px 5px 10px;
+    color: black;
+    background-color : rgb(234, 234, 234);
+}
+
+.footer4{
+ font-size:5px;
+    float: center;
+    margin-left: 30px;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    background-color:rgb(251, 74, 61);
+}
+
+.table, th, td{
+    width: 1600px;
+    border:1px solid #1B73BA
+    
+}
+
+.table {
+    padding-bottom: 50px;
+}

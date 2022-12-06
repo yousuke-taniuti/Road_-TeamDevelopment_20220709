@@ -1,0 +1,129 @@
+.wrapper{
+    margin: 0 auto;
+    width: 100%
+}
+
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+
+.ground{
+    height: 600px;
+}
+
+.header{
+    font-size:50px;
+    float: auto;
+    margin-top: 40px;
+    height: 70px;
+    margin-left: 550px;
+    padding-top: 20px;
+}
+
+.center{
+    width: 800px;
+    height: 480px;
+    margin-left: 100px;
+    vertical-align: middle;
+    background-color: white;
+}
+
+.main{
+    padding-top: 10px;
+    margin-left: 50px;
+    font-size:20px;
+}
+
+.content-left {
+ float: left;
+ margin-left: 330px;
+ width: 420px;
+}
+
+.id{
+    width:200px;
+    height:20px;
+}
+
+.name{
+    width:200px;
+    height:20px;
+}
+
+.kana{
+    width:200px;
+    height:20px;
+}
+
+.pass{
+    width:200px;
+    height:20px;
+}
+
+.upn{
+    width:200px;
+    height:20px;
+}
+
+.content-right {
+ float: left;
+    width: 500px;
+}
+
+.birthday{
+    width:200px;
+    height:20px;
+}
+
+.gender{
+    width:200px;
+    height:20px;
+}
+
+.prefecture_code{
+    width:200px;
+    height:20px;
+}
+
+.Position_code{
+    width:200px;
+    height:20px;
+}
+
+.department_code{
+    width:200px;
+    height:20px;
+}
+
+
+.entry_date{
+    width:200px;
+    height:20px;
+}
+
+.under{
+    font-size:25px;
+    float: auto;
+    margin-top: 10px;
+    height: 20px;
+    margin-left: 500px;
+}
+
+.footer{
+    font-size:20px;
+    margin-top: 40px;
+    margin-left: 500px;
+    padding: 5px 40px 5px 40px;
+    color: white;
+    background-color: gray;
+}
+
+
+.clearfix:after {
+ content: "";
+ display: block;
+ clear: both;
+ height: 0;
+ visibility: hidden;
+}

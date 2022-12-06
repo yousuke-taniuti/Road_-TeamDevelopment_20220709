@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>新規登録完了</title> 
+<link rel="stylesheet" href="/css/register_completion.css"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+        <div class="header">新規登録完了</div>
+              <div class="main clearfix">
+                <ul>
+                    <div class="content clearfix">
+                        <div class="content-left">
+                            <label>ユーザーID</label><br>
+                            <label class="id" size="8" th:text="${RegisterForm.user_id}"></label><br>
+
+                            <label>名前</label><br>
+                            <label class="name" size="20" th:text="${RegisterForm.name}"></label><br>
+
+                            <label>カタカナ</label><br>
+                            <label class="kana" size="50" th:text="${RegisterForm.name_kana}"></label><br>
+
+                            <label>パスワード</label><br>
+                            <label class="pass" size="100" >●●●●●●</label><br>
+
+                            <label>メールアドレス</label><br>
+                            <label class="upn" size="50" th:text="${RegisterForm.upn}"></label><br>
+                        </div>
+
+                        <div class="content-right">
+                            <label>生年月日</label><br>
+                            <label class="birthday" th:text="${#dates.format(RegisterForm.birthday,'yyyy-MM-dd')}"></label><br>
+
+                            <label>性別</label><br>
+                            
+                            <div th:if="${RegisterForm.gender == 1} " >
+					     		 <label class="gender" th:text="男性"></label>
+					    	</div>
+                            <div th:if="${RegisterForm.gender == 2} " >
+					     		 <label class="gender" th:text="女性"></label>
+					    	</div>
+                             <!-- <label class="gender" th:text="${RegisterForm.gender}"></label><br> -->
+
+                            <label>出身地</label><br>
+                            <label class="prefecture_code" th:text="${RegisterForm.prefecture_name}"></label><br>
+                                
+                             <label>役職</label><br>
+                            <label class="position_code" th:text="一般社員"></label><br> 
+
+                            <label>部署</label><br><!-- コードからネームに変更 -->
+                            <label class="department_code" th:text="${RegisterForm.department_name}"></label><br>
+                                
+                            <label>入社日</label><br>
+                            <label class="entry_date" th:text="${#dates.format(RegisterForm.entry_date,'yyyy-MM-dd')}"></label><br>
+                        </div>
+                         
+                    </div> 
+                    <div class="under">登録完了しました。</div>
+                    <button type="submit" class="footer" onclick="location.href='/login'">>トップに戻る</button>
+                    </div>
+                </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

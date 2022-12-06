@@ -1,0 +1,118 @@
+.wrapper{
+    margin: 0 auto;
+    width: 100%
+    
+}
+
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+  
+.ground{
+    height: 600px;
+}
+
+.header{
+    font-size:50px;
+    margin-top: 40px;
+    padding-top: 30px;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.center{
+    height: 380px;
+    vertical-align: middle;
+}
+
+.left{
+    width: 500px;
+    height: 450px;
+    margin-left: 330px;
+    float: left;
+    display: flex;
+    flex-direction: column;
+}
+
+.right{
+    width: 450px;
+    height: 450px;
+    float: left;
+}
+
+.right_inner{
+    display: flex;
+    flex-direction: column;
+}
+
+.name{
+    margin-top: 50px;
+}
+
+#name{
+	width:250px;
+    height:30px;
+}
+
+.base_salary{
+    margin-top: 30px;
+}
+
+#kyuyo{
+    width:250px;
+    height:30px;
+}
+
+.tax{
+    margin-top: 30px;
+}
+
+#zei{
+    width:250px;
+    height:30px;
+}
+
+.premium{
+    margin-top: 50px;
+}
+
+#hoken{
+    width:250px;
+    height:30px;
+}
+
+.carfare{
+    margin-top: 30px;
+}
+
+#koutu{
+    width:250px;
+    height:30px;
+}
+
+.gross_payment{
+    margin-top: 30px;
+}
+
+#sougaku{
+    width:250px;
+    height:30px;
+}
+
+.next{
+    padding: 5px 30px 5px 30px;
+    font-size:15px;
+    background-color: #4976f2;
+    margin-top: 40px;
+}
+
+.back{
+    padding: 5px 30px 5px 30px;
+    font-size:15px;
+    background-color: #d3d3e6;
+    margin-top: 40px;
+    margin-left: 30px;
+}

@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+#wrapper {
+    margin: 0 auto;
+    width: 1000px
+}
+.ground {
+    background-color: #CCFFFF;
+    border-top: 8px solid;
+    height: 600px;
+}
+.center{
+    width: 500px;
+    height: 200px;
+    margin-left: 250px;
+    vertical-align: middle;
+    background-color: white;
+    border-radius: 20px;
+}
+
+
+.deletion_completed {
+    margin-top: 100px;
+    text-align: center;
+    font-size: 45px;
+}
+.completed {
+    text-align: center;
+    padding-top: 40px;
+}
+.footer {
+    margin-top: 40px;
+    background: rgb(14, 233, 68); 
+    color: aliceblue;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 20px;
+    border-color: white;
+}

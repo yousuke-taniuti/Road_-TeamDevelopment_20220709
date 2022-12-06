@@ -1,0 +1,73 @@
+
+<link href="search.css" rel="stylesheet">
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head> 
+<meta charset="utf-8"> 
+<meta http-equiv="X-UA-Compatible" content="IE=edge"> 
+<title>給与編集画面</title> 
+<link th:href="@{/css/salary_s.css}" rel="stylesheet"></head>
+<body> 
+    <div class="wrapper"> 
+        <div class="ground">
+            <div class="header">給与編集画像</div>
+            <div class="center">
+    <!-- <form th:action="@{/salary_s/{userId}/{salaryNumber}}" th:object="${UpdateRequest}" th:method="post"> -->
+   <form th:action="@{/salary_s/update}"th:object="${editCompletedRequest}" th:method="post">
+   <input type="hidden" name = "salaryNumber" th:field="*{salaryNumber}"/>
+                 <div class="left">
+                    <div class="name">
+                        <label for="name">名前</label><br>
+                        <input type="text" name="name" value="" id="name" size="20" th:field="*{name}">
+                        <div th:if="${validationError}" th:each="error : ${validationError}">
+                      <label class="text-danger" th:text="${error}"></label>
+                      </div>
+                    </div>
+
+
+                    <div class="base_salary">
+                        <label for="baseSalary">給与</label><br>
+                        <input type="number" name="kyuyo" value="" id="kyuyo" size="20" th:field="*{baseSalary}">
+                    </div>
+
+                    <div class="tax">
+                        <label for="tax">税</label><br>
+                        <input type="number" name="zei" value="" id="zei" size="20" th:field="*{tax}">
+                    </div>
+
+                    
+                </div>
+
+                <div class="right">
+                    <div class="right_inner">
+	                    <div  class="premium">
+	                        <label for="premium">保険料</label><br>
+	                        <input type="number" name="hoken" value="" id="hoken" size="20" th:field="*{premium}">
+	                    </div>
+                    
+                        <div class="carfare">
+                            <label for="carfare">交通費</label><br>
+                            <input type="number" name="koutu" value="" id="koutu" size="20" th:field="*{carfare}">
+                        </div>
+
+                        <div class="gross_payment">
+                            <label for="gross_payment">総支給額</label><br>
+                            <input type="number" name="sougaku" value="" id="sougaku" size="20" th:field="*{grossPayment}">
+                        </div>
+
+                        <!-- <div class="salary_date">
+                            <label for="salary_date">交付日</label><br>
+                            <input type="date" name="kouhubi" value="" size="20" th:field="*{salaryDate}">
+                        </div> -->
+                    </div>
+                    
+                    <input th:href="@{/salary_completed}" type="submit" value="編集" class="next">
+                    
+                     <button type="button" class="back" onclick="history.back()">戻る</button>
+                </div>
+             </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

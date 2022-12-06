@@ -1,0 +1,112 @@
+.wrapper{
+    margin: 0 auto;
+    width: 100%
+    
+}
+
+body {
+    background-image: url("https://img.freepik.com/premium-photo/simple-white-background-with-smooth-lines-in-light-colors_476363-2152.jpg?w=2000");
+    background-size: cover;
+  }
+  
+.ground{
+    height: 600px;
+}
+
+.header{
+    font-size:50px;
+    float: auto;
+    height: 130px;
+    margin-left: 400px;
+    padding-top: 80px;
+}
+
+.center{
+    width: 700px;
+    height: 300px;
+    margin-top: 20px;
+    margin-left: 150px;
+    vertical-align: middle;
+}
+
+.main{
+    padding-top: 10px;
+    font-size:20px;
+}
+
+.word{
+    margin-left: 130px;
+}
+
+.footer{
+    font-size:20px;
+    width: 300px;
+    margin-top: 130px;
+    margin-left: 200px;
+    padding: 5px 40px 5px 40px;
+    background-color: #2DFF57;
+    color: white;
+}
+.clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrapper{
+    margin: 0 auto;
+    width: 1000px
+}
+
+.ground{
+    height: 600px;
+}
+
+.header{
+    font-size:50px;
+    float: auto;
+    height: 130px;
+    margin-left: 400px;
+    padding-top: 10px;
+}
+
+.center{
+    width: 950px;
+    height: 600px;
+    margin-top: 20px;
+    margin-left:  25px;
+    vertical-align: middle;
+}
+
+.table, th, td{
+    width: 950px;
+    border:1px solid #333
+}
+
+.table {
+    padding-bottom: 50px;
+}
+
+.main{
+    padding-top: 10px;
+    font-size:20px;
+}
+
+.word{
+    margin-left: 130px;
+}
+
+.footer {
+        font-size:20px;
+        width: 300px;
+        margin-left: 330px;
+        padding: 5px 40px 5px 40px;
+        background-color: rgb(213, 213, 213);
+        color: white;
+} 
+.botton2{
+	font-size:10px;
+    padding: 8px 40px 8px 40px;
+    color: white;
+    background-color: rgb(121, 128, 255);
+}
