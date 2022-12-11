@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import com.completed.request.EditCompletedRequest;
 import com.salary.entity.Salary;
@@ -43,25 +44,16 @@ public class SalaryController {
 		model.addAttribute("salaryList", salaryList);
 		model.addAttribute("editCompletedRequests", new EditCompletedRequest());
 		
-		return "salary";
+		return "html/salary_admin";
 	}
 	
 //	管理者が給与編集ボタンを押下したときに動く
-	@GetMapping("/salary_admin")
-	public String displayListt(Model model) {
-		List<Salary> salaryList = new ArrayList<Salary>();
-		List<Salary> salaryListAll = new ArrayList<Salary>();
-		salaryListAll = salaryService.searchAll();
-		for (int i = 0; salaryListAll.size() > i; i++) {
-			if (salaryListAll.get(i).getUser_id() == 1) { // user.getIdが１のところに来る
-				salaryList.add(salaryListAll.get(i));
-			}
-		}
-		model.addAttribute("salaryList", salaryList);
-		model.addAttribute("editCompletedRequests", new EditCompletedRequest());
-		
-		return "html/salary_admin";
-	}
+	  @GetMapping("/salary/{user_id}")
+	  public String displayView(@PathVariable String user_id, Model model) {
+	    Salary salary = salaryService.findById(user_id);
+	    model.addAttribute("salaryList", salary);
+	    return "html/salary_admin";
+	  }
 
 ////	給与編集画面
 //	@PostMapping(path= "salary", params= "salary")
